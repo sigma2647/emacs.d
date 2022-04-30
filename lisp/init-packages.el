@@ -8,7 +8,8 @@
 (use-package which-key
   :ensure t
   :config
-  (which-key-mode))
+  (setq which-key-idle-delay 0.3))
+(which-key-mode)
 
 ;; Org-mode
 (use-package org-bullets
@@ -24,6 +25,7 @@
 ;开启vim-mode
 (evil-mode 1)
 
+; doom状态栏
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1)
@@ -39,6 +41,10 @@
          ("M-<down>" . drag-stuff-down)))
 
 
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+
 (use-package ivy
   :diminish
   :bind ((:map ivy-minibuffer-map)
@@ -49,7 +55,9 @@
 	 ("C-d" . ivy-done)))
 (ivy-mode 1)
 
-
+;(use-package ivy-rich
+  ;:init)
+;(ivy-rich-mode 1)
 
 ;:leader
 ;(use-package evil-leader
@@ -62,9 +70,6 @@
 (setq which-key-show-early-on-C-h t)
 ;; make sure which-key doesn't show normally but refreshes quickly after it is
 ;; triggered.
-(setq which-key-idle-delay 0.3)
-(setq which-key-idle-secondary-delay 0.05)
-(which-key-mode)
 
 
 (provide 'init-packages)
