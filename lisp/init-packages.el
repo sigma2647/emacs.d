@@ -26,7 +26,9 @@
 
 (use-package doom-modeline
   :ensure t
-  :hook (after-init . doom-modeline-mode))
+  :init (doom-modeline-mode 1)
+  :custom ((doom-modeline-height 15)))
+
 ;自动重启emacs
 (use-package restart-emacs
   :ensure t)
@@ -35,6 +37,19 @@
 (use-package drag-stuff
   :bind (("M-<up>" . drag-stuff-up)
          ("M-<down>" . drag-stuff-down)))
+
+
+(use-package ivy
+  :diminish
+  :bind ((:map ivy-minibuffer-map)
+	 ("C-j" . ivy-next-line)
+	 ("C-k" . ivy-previous-line)
+	 ("C-n" . ivy-next-line)
+	 ("C-p" . ivy-previous-line)
+	 ("C-d" . ivy-done)))
+(ivy-mode 1)
+
+
 
 ;:leader
 ;(use-package evil-leader

@@ -7,11 +7,14 @@
 
 
 
-(add-to-list 'package-archives
-         '("melpa" . "https://melpa.org/packages/"))
-
-
 (require 'package)
+(add-to-list 'package-archives
+         '("melpa" . "https://melpa.org/packages/")
+         '("elpa" . "http://elpa.gnu.org/packages/"))
+
+
+
+
 
 (unless (bound-and-true-p package--initialized) ;; To avoid warnings on 27
   (package-initialize))
@@ -41,7 +44,7 @@
 ;     :config
 ;     :bind
 ;     :hook) ;hook模式的绑定
-;(setq use-package-always-ensure t) ;确保所有包都被安装
+(setq use-package-always-ensure t) ;确保所有包都被安装
 ;(setq use-package-always-defer t) ;默认所有包都延迟加载
 ;(setq use-package-verbose t) ;显示所有包的名字
 ;(setq use-package-demand t)

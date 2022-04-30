@@ -19,3 +19,7 @@ git clone git@github.com:sigma2647/emacs.d.git
 
 ## 插件
 - [melpa](https://melpa.org/#/)
+
+
+
+eval-buffer 更新主题

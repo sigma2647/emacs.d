@@ -14,4 +14,5 @@
 
 
 ;set fontsize
-(set-face-attribute 'default nil :height 300)
+(set-face-attribute 'default nil :height 210)
+
