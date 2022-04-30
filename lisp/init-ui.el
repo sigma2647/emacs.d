@@ -10,3 +10,8 @@
 (load-theme 'dracula)
 
 (provide 'init-ui)
+
+
+
+;set fontsize
+(set-face-attribute 'default nil :height 300)

@@ -26,7 +26,7 @@
 
 
 (when (file-exists-p custom-file)
-;k  (load-file custom-file))
+  (load-file custom-file))
 
 
 
