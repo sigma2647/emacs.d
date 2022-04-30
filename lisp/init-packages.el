@@ -28,6 +28,10 @@
 ;自动重启emacs
 (use-package restart-emacs)
 
+;移动代码块
+(use-package drag-stuff
+  :bind (("M-<up>" . drag-stuff-up)
+         ("M-<down>" . drag-stuff-down)))
 
 
 

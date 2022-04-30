@@ -1,27 +1,35 @@
-(add-to-list 'load-path
-             (expand-file-name (concat user-emacs-directory "lisp")))
+(add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp/")))
+
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(setq custom-file (locate-user-emacs-file "custom.el"))
+
+;设置默认路径
+(setq default-directory "~/")
 
 
+;; 调整垃圾收集阈值
 
+(let ((normal-gc-cons-threshold (* 20 1024 1024))
+      (init-gc-cons-threshold (* 128 1024 1024)))
+  (setq gc-cons-threshold init-gc-cons-threshold)
+  (add-hook 'emacs-startup-hook
+            (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
+
+
+(require 'init-system)
 (require 'init-startup)
 (require 'init-elpa)
 (require 'init-packages)
 (require 'init-ui)
+(require 'init-keymap)
 
 
-;https://www.bilibili.com/video/BV13g4y167Zn?p=17&t=75.8
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("1436985fac77baf06193993d88fa7d6b358ad7d600c1e52d12e64a2f07f07176" default))
- '(package-selected-packages
-   '(## which-key use-package try org-bullets evil-visual-mark-mode dracula-theme)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+(when (file-exists-p custom-file)
+;k  (load-file custom-file))
+
+
+
+
+
+;https://github.com/purcell/emacs.d/blob/master/init.el
+;大师配置
