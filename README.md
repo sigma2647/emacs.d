@@ -1,7 +1,7 @@
 # 
 
 ``` shell
-git clone git@github.com:sigma2647/emacs.d.git 
+git clone git@github.com:sigma2647/emacs.d.git  ~/.emacs.d
 ```
 
 ## todo
