@@ -1,6 +1,15 @@
 /elpa
-/auto-save-list
 *~
 \#*
 tutorial/
 .DS_Store
+auto-save-list/
+
+
+
+
+
+
+
+
+

@@ -1,8 +1,19 @@
 # 
 
+## 配置文件位置
+- `~/.emacs.d`
+### 克隆到本地
 ``` shell
 git clone git@github.com:sigma2647/emacs.d.git  ~/.emacs.d
 ```
+
+
+
+
+
+
+
+
 
 ## todo
 - 添加清华源

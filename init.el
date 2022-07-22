@@ -4,7 +4,10 @@
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (setq custom-file (locate-user-emacs-file "custom.el"))
 
-;设置默认路径
+
+; ┌──────────┐
+; │ 默认路径 │
+; └──────────┘
 (setq default-directory "~/")
 
 
@@ -19,15 +22,14 @@
 
 (require 'init-system)
 (require 'init-startup)
-(require 'init-elpa)
-(require 'init-packages)
+; (require 'init-elpa)
+; (require 'init-packages)
 (require 'init-ui)
 (require 'init-keymap)
 
 
 (when (file-exists-p custom-file)
   (load-file custom-file))
-
 
 
 
