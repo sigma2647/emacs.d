@@ -2,20 +2,12 @@
 ; │ PACKAGE │
 ; └─────────┘
 
-(setq package-check-signature nil)  ;; don't check package signatures
-(setq package-enable-at-startup nil)
-
-
-
-(add-to-list 'package-archives
-         '("melpa" . "https://melpa.org/packages/"))
-
 
 (require 'package)
 
-(unless (bound-and-true-p package--initialized) ;; To avoid warnings on 27
-  (package-initialize))
+(setq package-archives'("melpa" . "https://melpa.org/packages/"))
 
+(package-initialize))
 (unless package-archive-contents
   (package-refresh-contents))
 
@@ -24,7 +16,22 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(require 'use-package)
+(setq use-package-always-ensure t) ;确保所有包都被安装
 
+
+;
+; (setq package-check-signature nil)  ;; don't check package signatures
+; (setq package-enable-at-startup nil)
+;
+;
+;
+;
+;
+;
+; (unless (bound-and-true-p package--initialized) ;; To avoid warnings on 27
+;
+;
 
 
 
@@ -57,4 +64,5 @@
 			 ;("org" . "http://elpa.emacs-china.org/org/")
 			 ;("marmalade" . "http://elpa.emacs-china.org/marmalade/")
 			 ;("user42" . "http://elpa.emacs-china.org/user42/"))))
+
 (provide 'init-elpa)
