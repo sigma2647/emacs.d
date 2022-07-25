@@ -18,8 +18,24 @@
 ; ┌────────┐
 ; │ editor │
 ; └────────┘
+
+(column-number-mode)
+
 (setq display-line-numbers-type 'relative) ; 相对行号
 (global-display-line-numbers-mode t)       ; 全局显示行号
+
+
+
+;; 不显示行号
+(dolist (mode '(text-mode-hook
+                prog-mode-hook
+                shell-mode-hook
+                conf-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
+
+;; Override some modes which derive from the above
+(dolist (mode '(org-mode-hook))
+  (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 
 

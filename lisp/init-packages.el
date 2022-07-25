@@ -7,10 +7,6 @@
 ; (use-package try
 ;   :ensure t)
 ;
-; (use-package which-key
-;   :ensure t
-;   :config
-;   (which-key-mode))
 ;
 ; ;; Org-mode
 ; (use-package org-bullets
@@ -55,9 +51,10 @@
 
 (use-package ivy
   :diminish
+  :init(which-key-mode)
   :bind (("C-s" . swiper)
          :map ivy-minibuffer-map
-         ("TAB" . ivy-alt-done)	
+         ("TAB" . ivy-alt-done)
          ("C-l" . ivy-alt-done)
          ("C-j" . ivy-next-line)
          ("C-k" . ivy-previous-line)
@@ -70,5 +67,45 @@
          ("C-d" . ivy-reverse-i-search-kill))
   :config
   (ivy-mode 1))
+
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1)
+  :custom ((doom-modeline-height 15)))
+
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+
+
+(use-package which-key
+  :init(which-key-mode)
+  :diminish which-key-mode
+  :config
+    (setq which-key-idle-delay 0))
+
+(use-package ivy-rich
+  :init
+  (ivy-rich-mode 1))
+
+(use-package counsel
+  :bind (("M-x" . counsel-M-x)
+	 ("C-x b" . counsel-iubffer)
+	 ("C-x C-f" . counsel-find-file)
+	 :map minibuffer-local-map
+	 ("C-r" . 'counsel-minibuffer-history)))
+
+(use-package helpful
+  :ensure t
+  :custom
+  (counsel-describe-function-function #'helpful-callable)
+  (counsel-describe-variable-function #'helpful-variable)
+  :bind
+  ([remap describe-function] . counsel-describe-function)
+  ([remap describe-command] . helpful-command)
+  ([remap describe-variable] . counsel-describe-varibale)
+  ([remap describe-key] . helpful-key))
+
+(use-package org)
 
 (provide 'init-packages)
