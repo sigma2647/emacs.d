@@ -22,9 +22,12 @@
 (global-display-line-numbers-mode t)       ; 全局显示行号
 
 
-(provide 'init-options)
 
 
 ; emacs 29
-(pixel-scroll-precision-mode)  ;像素滚动
 
+(when (>= emacs-major-version 29)
+    (pixel-scroll-precision-mode)) ;像素滚动
+
+
+(provide 'init-options)
