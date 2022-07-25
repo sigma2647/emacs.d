@@ -20,6 +20,12 @@
 
 
 
+; ┌──────────────┐
+; │ 关闭C-触控板 │
+; └──────────────┘
+(global-set-key (kbd "<C-wheel-up>") nil)
+(global-set-key (kbd "<C-wheel-down>") nil)
+
 
 
 

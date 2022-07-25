@@ -23,3 +23,8 @@
 
 
 (provide 'init-options)
+
+
+; emacs 29
+(pixel-scroll-precision-mode)  ;像素滚动
+
