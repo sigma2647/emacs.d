@@ -33,5 +33,5 @@
 
 
 
-(provide 'init-keymap)
+(provide 'core-keymap)
 
