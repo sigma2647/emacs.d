@@ -15,8 +15,8 @@
 ; (require 'init-system)
 (require 'init-options)
 (require 'init-startup)
-; (require 'init-elpa)
-; (require 'init-packages)
+(require 'init-elpa)
+(require 'init-packages)
 ; (require 'init-ui)
 (require 'init-keymap)
 
@@ -26,8 +26,8 @@
 ; │ theme │
 ; └───────┘
 
-(load-theme 'modus-vivendi t)
-
+;(load-theme 'modus-vivendi t)
+(load-theme 'tango-dark)
 
 (when (file-exists-p custom-file)
   (load-file custom-file))
