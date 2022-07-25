@@ -69,7 +69,7 @@
   (ivy-mode 1))
 
 
-(use-package all-the)
+(use-package all-the-icons)
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1)

@@ -18,6 +18,9 @@
 (global-set-key (kbd "s-x") 'kill-region) ;对应Windows上面的Ctrol-x 剪切
 
 
+(global-set-key (kbd "C-M-J") 'counsel-switch-buffer) ;对应Windows上面的Ctrol-x 剪切
+
+
 
 
 ; ┌──────────────┐
