@@ -5,9 +5,11 @@
 
 (require 'package)
 
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")
-                         ("org" . "https://orgmode.org/elpa/")
-                         ("elpa" . "https://elpa.gnu.org/packages/")))
+(setq package-archives '(;("melpa" . "https://melpa.org/packages/")
+                         ("melpa" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/melpa/")
+                         ("org" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/org/")
+                         ("gnu" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/gnu/")))
+                         ; ("elpa" . "https://elpa.gnu.org/packages/")))
 
 
 (package-initialize)

@@ -17,8 +17,9 @@
 (require 'init-startup)
 (require 'init-elpa)
 (require 'init-packages)
-; (require 'init-ui)
+(require 'init-ui)
 (require 'init-keymap)
+; (require 'init-evil)
 
 
 
@@ -26,8 +27,8 @@
 ; │ theme │
 ; └───────┘
 
-;(load-theme 'modus-vivendi t)
-(load-theme 'tango-dark)
+(load-theme 'doom-Iosvkem t)
+
 
 (when (file-exists-p custom-file)
   (load-file custom-file))

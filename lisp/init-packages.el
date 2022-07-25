@@ -68,10 +68,14 @@
   :config
   (ivy-mode 1))
 
+
+(use-package all-the)
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1)
   :custom ((doom-modeline-height 15)))
+
+(use-package doom-themes)
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
@@ -107,5 +111,18 @@
   ([remap describe-key] . helpful-key))
 
 (use-package org)
+(use-package org-bullets
+    :after org
+    :hook (org-mode . org-bullets-mode)
+    :custom
+    (org-bullets-bullet-list '("◉" "☯" "○" "☯" "✸" "☯" "✿" "☯" "✜" "☯" "◆" "☯" "▶")))
+
+; Replace list hyphen with dot
+(font-lock-add-keywords 'org-mode
+                       '(("^ *\\([-]\\) "
+                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
+
+
 
 (provide 'init-packages)
