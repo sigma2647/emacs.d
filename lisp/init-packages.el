@@ -87,7 +87,7 @@
   :init(which-key-mode)
   :diminish which-key-mode
   :config
-    (setq which-key-idle-delay 0))
+    (setq which-key-idle-delay 0.1))
 
 (use-package ivy-rich
   :init
@@ -95,6 +95,7 @@
 
 (use-package counsel
   :bind (("M-x" . counsel-M-x)
+	 ("s-p" . counsel-M-x)
 	 ("C-x b" . counsel-iubffer)
 	 ("C-x C-f" . counsel-find-file)
 	 :map minibuffer-local-map
@@ -118,10 +119,29 @@
     :custom
     (org-bullets-bullet-list '("◉" "☯" "○" "☯" "✸" "☯" "✿" "☯" "✜" "☯" "◆" "☯" "▶")))
 
-; Replace list hyphen with dot
-(font-lock-add-keywords 'org-mode
-                       '(("^ *\\([-]\\) "
-                           (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
+(use-package projectile
+  :diminish projectile-mode
+  :config (projectile-mode)
+  :custom ((projectile-completion-system 'ivy))
+  :bind-keymap
+  ("C-c p" . projectile-command-map)
+  :init
+  ;; NOTE: Set this to the folder where you keep your Git repos!
+  (when (file-directory-p "~/quant_alpha")
+    (setq projectile-project-search-path '("~/quant_alpha")))
+  (setq projectile-switch-project-action #'projectile-dired))
+
+
+
+(use-package magit
+  :custom
+  (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1)
+)
+
+(use-package evil-magit
+  :after magit
+)
 
 
 

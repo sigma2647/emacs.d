@@ -3,15 +3,13 @@
 /transient
 *~
 \#*
+\.#*
 tutorial/
 .DS_Store
 auto-save-list/
 recentf
-
-
-
-
-
+projectile-bookmarks.eld
+custom.el
 
 
 

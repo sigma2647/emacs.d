@@ -46,4 +46,9 @@
     (pixel-scroll-precision-mode)) ;像素滚动
 
 
+; Replace list hyphen with dot
+(font-lock-add-keywords 'org-mode
+			'(("^ *\\([-]\\) "
+			   (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
 (provide 'init-options)
