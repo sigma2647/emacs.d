@@ -1,4 +1,6 @@
 /elpa
+/eln-cache
+/transient
 *~
 \#*
 tutorial/

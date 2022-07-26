@@ -69,7 +69,8 @@
   (ivy-mode 1))
 
 
-(use-package all-the-icons)
+(use-package all-the-icons
+  :if (display-graphic-p))
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1)

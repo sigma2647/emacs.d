@@ -31,7 +31,7 @@
                 prog-mode-hook
                 shell-mode-hook
                 conf-mode-hook))
-  (add-hook mode (lambda () (display-line-numbers-mode 0))))
+  (add-hook mode (lambda () (display-line-numbers-mode 1))))
 
 ;; Override some modes which derive from the above
 (dolist (mode '(org-mode-hook))

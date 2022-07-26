@@ -19,7 +19,7 @@
 (require 'init-packages)
 (require 'init-ui)
 (require 'core-keymap)
-; (require 'init-evil)
+(require 'init-evil)
 
 
 
