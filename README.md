@@ -6,6 +6,10 @@
 ``` shell
 git clone git@github.com:sigma2647/emacs.d.git  ~/.emacs.d
 ```
+### font
+#### all-the-icons
+- `M-x all-the-icons-install-fonts`
+
 
 
 
