@@ -71,6 +71,7 @@
 
 (use-package all-the-icons
   :if (display-graphic-p))
+
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1)
@@ -138,8 +139,14 @@
   :custom
   (magit-display-buffer-function #'magit-display-buffer-same-window-except-diff-v1))
 
-(use-package evil-magit
-  :after magit)
+;(use-package evil-magit
+;  :after magit)
+
+;; Or if you use use-package
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
 
 
 
