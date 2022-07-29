@@ -34,3 +34,6 @@ git clone git@github.com:sigma2647/emacs.d.git  ~/.emacs.d
 
 ## 插件
 - [melpa](https://melpa.org/#/)
+
+## 字体
+Iosevka SS04
