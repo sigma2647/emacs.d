@@ -10,6 +10,8 @@
     "t"  '(:ignore t :which-key "Toggles")
     "fc" '(counsel-load-theme :which-key "Choose Theme")
     "fr" '(counsel-recentf :which-key "Recent File")
+    "ff" '(find-file :which-key "Find File")
+    "pc" '(eval-buffer :which-key "Packer Compile")
   )
 )
 

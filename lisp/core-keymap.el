@@ -16,6 +16,8 @@
 (global-set-key (kbd "s-z") 'undo) ;对应Windows上面的Ctrol-z 撤销
 (global-set-key (kbd "s-Z") 'redo) ;对应Windows上面的Ctrol-z 撤销
 (global-set-key (kbd "s-x") 'kill-region) ;对应Windows上面的Ctrol-x 剪切
+(global-set-key (kbd "s-o") 'counsel-recentf) ;; 
+
 
 
 (global-set-key (kbd "C-M-J") 'counsel-switch-buffer) ;对应Windows上面的Ctrol-x 剪切

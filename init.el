@@ -20,6 +20,7 @@
 (require 'init-ui)
 (require 'core-keymap)
 (require 'init-evil)
+(require 'init-function)
 
 
 
@@ -27,7 +28,7 @@
 ; │ theme │
 ; └───────┘
 
-(load-theme 'doom-Iosvkem t)
+(load-theme 'doom-ayu-dark t)
 
 
 (when (file-exists-p custom-file)
@@ -46,3 +47,4 @@
 
 ;https://github.com/purcell/emacs.d/blob/master/init.el
 ;大师配置
+
