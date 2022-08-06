@@ -8,8 +8,8 @@
 
 
 
-; ;set fontsize
-; (set-face-attribute 'default nil :height 300)
+;set fontsize
+(set-face-attribute 'default nil :height 200)
 
 
 

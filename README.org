@@ -5,24 +5,28 @@
   git clone git@github.com:sigma2647/emacs.d.git  ~/.emacs.d
 #+end_src
 * font
-* all-the-icons
+** all-the-icons
 - `M-x all-the-icons-install-fonts`
-
 
 * todo
 - 添加清华源
 - 文件树
 
 * expample config
-- [cabins/emacs.d](https://github.com/cabins/emacs.d)
-
+- [[https://github.com/cabins/emacs.d][cabins/emacs.d]]
 - [cabins/.emacs.d](https://github.com/cabins/.emacs.d)
 - [(new)cabins/emacs.d](https://github.com/cabins/emacs.d)
-- 3k starts [redguardtoo/emacs.d](https://github.com/redguardtoo/emacs.d)
+- [[https://github.com/redguardtoo/emacs.d][3k stars redguardtoo/emacs.d]]
 
-
+  
 * 插件
 - [melpa](https://melpa.org/#/)
 
 * 字体
 Iosevka SS04
+
+
+* config_path
+
+[[~/.emacs.d/lisp/init-packages.el][package]]
+[[~/.emacs.d/lisp/init-ui.el][font]]
