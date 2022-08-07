@@ -148,6 +148,7 @@
   :config
   (dashboard-setup-startup-hook))
 
+(use-package anaconda-mode)
 
 
 (provide 'init-packages)

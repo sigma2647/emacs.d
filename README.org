@@ -20,7 +20,7 @@
 
   
 * 插件
-- [melpa](https://melpa.org/#/)
+- [[https://melpa.org/#/][melpa]]
 
 * 字体
 Iosevka SS04
