@@ -149,6 +149,7 @@
   (dashboard-setup-startup-hook))
 
 (use-package anaconda-mode)
+(use-package auto-complete)
 
 
 (provide 'init-packages)
