@@ -18,15 +18,12 @@
 - [(new)cabins/emacs.d](https://github.com/cabins/emacs.d)
 - [[https://github.com/redguardtoo/emacs.d][3k stars redguardtoo/emacs.d]]
 
-  
 * 插件
 - [[https://melpa.org/#/][melpa]]
 
 * 字体
 Iosevka SS04
 
-
 * config_path
-
 [[~/.emacs.d/lisp/init-packages.el][package]]
 [[~/.emacs.d/lisp/init-ui.el][font]]

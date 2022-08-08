@@ -35,8 +35,7 @@
 ;          ("M-<down>" . drag-stuff-down)))
 ;
 ; ;:leader
-; ;(use-package evil-leader
-;              ;:bind (("SPC" . evil-leader-mode)))
+; ;(use-package evil-leader ;              ;:bind (("SPC" . evil-leader-mode)))
 ;              ;:config
 ;
 ; ;(global-evil-leader-mode)
@@ -150,6 +149,23 @@
 
 (use-package anaconda-mode)
 (use-package auto-complete)
+
+
+
+;-----------
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (python . t)))
+(setq org-confirm-babel-evaluate nil)
+
+
+(require 'org-tempo)
+(add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+(add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+(add-to-list 'org-structure-template-alist '("py" . "src python"))
+
+(use-package org-tempo)
 
 
 (provide 'init-packages)
