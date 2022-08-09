@@ -48,3 +48,8 @@
 ;https://github.com/purcell/emacs.d/blob/master/init.el
 ;大师配置
 
+
+
+
+(setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
+

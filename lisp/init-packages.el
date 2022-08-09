@@ -3,51 +3,6 @@
 ; │ PACKAGE │
 ; └─────────┘
 
-
-; (use-package try
-;   :ensure t)
-;
-;
-; ;; Org-mode
-; (use-package org-bullets
-;   :ensure t
-;   :config
-;   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
-;
-; (use-package org
-;   :ensure t)
-;
-; (use-package evil
-;   :ensure t)
-; ;开启vim-mode
-; (evil-mode 1)
-;
-; (use-package doom-modeline
-;   :ensure t
-;   :hook (after-init . doom-modeline-mode))
-; ;自动重启emacs
-; (use-package restart-emacs
-;   :ensure t)
-;
-; ;移动代码块
-; (use-package drag-stuff
-;   :bind (("M-<up>" . drag-stuff-up)
-;          ("M-<down>" . drag-stuff-down)))
-;
-; ;:leader
-; ;(use-package evil-leader ;              ;:bind (("SPC" . evil-leader-mode)))
-;              ;:config
-;
-; ;(global-evil-leader-mode)
-;
-; ;; Allow C-h to trigger which-key before it is done automatically
-; (setq which-key-show-early-on-C-h t)
-; ;; make sure which-key doesn't show normally but refreshes quickly after it is
-; ;; triggered.
-; (setq which-key-idle-delay 0.3)
-; (setq which-key-idle-secondary-delay 0.05)
-; (which-key-mode)
-
 (use-package ivy
   :diminish
   :init(which-key-mode)
@@ -144,8 +99,28 @@
 ;; Or if you use use-package
 (use-package dashboard
   :ensure t
+  :init
+  (progn
+    ;(setq dashboard-startup-banner "~/Downloads/IMG_D39C1E9B3D4A-1.jpeg")
+    ;(setq dashboard-startup-banner "~/Downloads/eva.png")
+    (setq dashboard-startup-banner
+	  (when (display-graphic-p) "~/.emacs.d/dashboard/eva.png"))
+    (setq dashboard-banner-logo-title "HI Emacs")
+    (setq dashboard-set-heading-icons t)
+    (setq dashboard-set-file-icons t)
+    (setq dashboard-items '((recents . 5)
+			    (projects . 5)))
+    (setq dashboard-center-content t)
+    (setq dashboard-image-banner-max-width 300)
+    (setq dashboard-image-banner-max-height 300)
+    )
+ 
+
   :config
   (dashboard-setup-startup-hook))
+
+
+
 
 (use-package anaconda-mode)
 (use-package auto-complete)
@@ -167,5 +142,14 @@
 
 (use-package org-tempo)
 
+(use-package lsp-mode
+  :commands (lsp lsp-deferred)
+  :init
+  (setq lsp-keymap-prefix "C-c l")
+  :config
+  (lsp-enable-which-key-integration t))
+
+
+(use-package lsp-ui)
 
 (provide 'init-packages)
