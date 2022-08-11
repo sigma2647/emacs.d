@@ -67,12 +67,35 @@
   ([remap describe-variable] . counsel-describe-varibale)
   ([remap describe-key] . helpful-key))
 
-(use-package org)
+;
+(defun efs/org-mode-setup ()
+  (org-indent-mode))
+  ; (variable-pitch-mode 1)
+  ; (visual-line-mode 1))
+
+(use-package org
+  :pin org
+  :hook (org-mode . efs/org-mode-setup)
+  :config
+  (setq org-ellipsis "▾"))
+  ;(setq org-startup-indented t))
+
 (use-package org-bullets
     :after org
     :hook (org-mode . org-bullets-mode)
     :custom
     (org-bullets-bullet-list '("◉" "☯" "○" "☯" "✸" "☯" "✿" "☯" "✜" "☯" "◆" "☯" "▶")))
+
+; (dolist (face '((org-level-1 . 1.2)
+;                   (org-level-2 . 1.1)
+;                   (org-level-3 . 1.05)
+;                   (org-level-4 . 1.0)
+;                   (org-level-5 . 1.1)
+;                   (org-level-6 . 1.1)
+;                   (org-level-7 . 1.1)
+;                   (org-level-8 . 1.1)))
+;     (set-face-attribute (car face) nil :font "JetBrains Mono" :weight 'regular :height (cdr face)))
+
 
 
 (use-package projectile
@@ -151,5 +174,36 @@
 
 
 (use-package lsp-ui)
+
+
+  (use-package typescript-mode
+    :mode "\\.ts\\'"
+    :hook (typescript-mode . lsp-deferred)
+    :config
+    (setq typescript-indent-level 2))
+
+(use-package python-mode
+  :ensure t
+  :hook (python-mode . lsp-deferred)
+  :custom
+  ;; NOTE: Set these if Python 3 is called "python3" on your system!
+  (python-shell-interpreter "python3")
+  ;; (dap-python-executable "python3")
+  (dap-python-debugger 'debugpy)
+  :config
+  (require 'dap-python))
+
+ (use-package company
+  :after lsp-mode
+  :hook (lsp-mode . company-mode)
+  :bind (:map company-active-map
+         ("<tab>" . company-complete-selection))
+        (:map lsp-mode-map
+         ("<tab>" . company-indent-or-complete-common))
+  :custom
+  (company-minimum-prefix-length 1)
+  (company-idle-delay 0.0))
+  
+
 
 (provide 'init-packages)

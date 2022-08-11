@@ -7,11 +7,15 @@
 \.#*
 tutorial/
 .DS_Store
+.cache
+eshell/
 auto-save-list/
 recentf
 projectile-bookmarks.eld
 custom.el
 ac-comphist.dat
+.lsp-se
+
 
 
 
