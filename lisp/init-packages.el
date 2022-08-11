@@ -140,7 +140,7 @@
 (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
 (add-to-list 'org-structure-template-alist '("py" . "src python"))
 
-(use-package org-tempo)
+; (use-package org-tempo)
 
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
