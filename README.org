@@ -1,5 +1,12 @@
 * 配置文件位置
 - `~/.emacs.d`
+** sdf
+sdf
+** sdf
+
+sdf
+*** sd
+ 
 * 克隆到本地
 #+begin_src shell
   git clone git@github.com:sigma2647/emacs.d.git  ~/.emacs.d
