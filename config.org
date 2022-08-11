@@ -37,8 +37,8 @@
 |---------+------------------------|
 | C-c C-l | Insert Line            |
 | C-enter | create same level link |
-|         |                        |
-|         |                        |
+| g-k     |                        |
+| g-l     |                        |
 
 * Develope
 ** lsp

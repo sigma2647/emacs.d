@@ -77,7 +77,7 @@
   :pin org
   :hook (org-mode . efs/org-mode-setup)
   :config
-  (setq org-ellipsis "▾"))
+  (setq org-ellipsis " ▾"))
   ;(setq org-startup-indented t))
 
 (use-package org-bullets
