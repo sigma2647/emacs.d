@@ -7,6 +7,7 @@
 (scroll-bar-mode -1)
 (recentf-mode 1)  ;recent file
 
+(save-place-mode 1)  ; Remembering Last Editing Positions
 
 (setq inhibit-startup-message t
       visible-bell nil)   ; 忽略启动消息
@@ -20,6 +21,7 @@
 ; └────────┘
 
 (column-number-mode)
+;(split-window-right)
 
 (setq display-line-numbers-type 'relative) ; 相对行号
 (global-display-line-numbers-mode t)       ; 全局显示行号

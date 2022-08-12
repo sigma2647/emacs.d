@@ -1,20 +1,21 @@
 * TODO
-历史命令
-lsp
-cmp补全
-内置输入法
-org-tree
-indent
-indent line
-markdown mode
-enter goto link
-org_indent
-math-mode
-emacs
-- 搜索
-
-install org-babel-execute
-
+- [ ] 历史命令
+- [ ] lsp
+- [ ] cmp补全
+- [ ] 内置输入法
+- [ ] org-tree
+- [ ] markdown mode
+- [ ] enter goto link
+- [ ] org_indent
+- [ ] math-mode
+- [ ] emacs
+- [ ] 搜索
+- [ ] magit
+- [ ] python-shell-send-region
+- [ ] python-shell-send-block
+- [X] indent line
+- [X] install org-babel-execute
+- [X] last positon
 ** packages
 [[https://github.com/rougier/org-outer-indent][rougier/org-outer-indent]]
 
@@ -148,6 +149,8 @@ Iosevka SS04
 | C-c l gg | lsp-find-definition | defninition |
 | S-right  | toggle TODO         |             |
 
-1. python-shell-send-region
 
    
+
+* Tips
+[[https://www.emacswiki.org/emacs/%e7%b6%b2%e7%ab%99%e5%9c%b0%e5%9c%96][emacswiki]]
