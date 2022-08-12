@@ -10,6 +10,8 @@ markdown mode
 enter goto link
 org_indent
 math-mode
+emacs
+- 搜索
 
 install org-babel-execute
 

@@ -119,28 +119,30 @@
 ;(use-package evil-magit
 ;  :after magit)
 
-;; Or if you use use-package
+; Or if you use use-package
 (use-package dashboard
-  :ensure t
-  :init
-  (progn
-    ;(setq dashboard-startup-banner "~/Downloads/IMG_D39C1E9B3D4A-1.jpeg")
-    ;(setq dashboard-startup-banner "~/Downloads/eva.png")
-    (setq dashboard-startup-banner
+ :ensure t
+ :init
+ (progn
+   ;(setq dashboard-startup-banner "~/Downloads/IMG_D39C1E9B3D4A-1.jpeg")
+   ;(setq dashboard-startup-banner "~/Downloads/eva.png")
+   (setq dashboard-startup-banner
 	  (when (display-graphic-p) "~/.emacs.d/dashboard/eva.png"))
-    (setq dashboard-banner-logo-title "HI Emacs")
-    (setq dashboard-set-heading-icons t)
-    (setq dashboard-set-file-icons t)
-    (setq dashboard-items '((recents . 5)
+   (setq dashboard-banner-logo-title "HI Emacs")
+   (setq dashboard-set-heading-icons t)
+   (setq dashboard-set-file-icons t)
+   (setq dashboard-items '((recents . 5)
 			    (projects . 5)))
-    (setq dashboard-center-content t)
-    (setq dashboard-image-banner-max-width 300)
-    (setq dashboard-image-banner-max-height 300)
-    )
- 
+   (setq dashboard-center-content t)
+   (setq dashboard-image-banner-max-width 300)
+   (setq dashboard-image-banner-max-height 300)
+   )
 
-  :config
-  (dashboard-setup-startup-hook))
+
+ :config
+ (add-hook 'after-init-hook 'dashboard-refresh-buffer)
+
+ (dashboard-setup-startup-hook))
 
 
 

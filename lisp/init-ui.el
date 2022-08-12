@@ -10,6 +10,8 @@
 
 ;set fontsize
 (set-face-attribute 'default nil :height 170)
+(set-frame-font "MesloLGS NF 15" nil t)
+
 
 
 
