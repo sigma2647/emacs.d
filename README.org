@@ -1,11 +1,25 @@
+* TODO
+历史命令
+lsp
+cmp补全
+内置输入法
+org-tree
+indent
+indent line
+markdown mode
+enter goto link
+org_indent
+math-mode
+
+install org-babel-execute
+
+** packages
+[[https://github.com/rougier/org-outer-indent][rougier/org-outer-indent]]
+
+* init
+[[https://github.com/daviwil/emacs-from-scratch/blob/dd9320769f3041ac1edca139496f14abe147d010/Emacs.org#python][daviwil/emacs-from-scratche]]
 * 配置文件位置
 - `~/.emacs.d`
-** sdf
-sdf
-** sdf
-
-sdf
-*** sd
  
 * 克隆到本地
 #+begin_src shell
@@ -15,14 +29,14 @@ sdf
 ** all-the-icons
 - `M-x all-the-icons-install-fonts`
 
-* todo
-- 添加清华源
-- 文件树
+* TODO todo
+** DONE 添加清华源
+2) 文件树
 
 * expample config
 - [[https://github.com/cabins/emacs.d][cabins/emacs.d]]
-- [cabins/.emacs.d](https://github.com/cabins/.emacs.d)
-- [(new)cabins/emacs.d](https://github.com/cabins/emacs.d)
+- [[https://github.com/cabins/.emacs.d][cabins/.emacs.d]]
+- [[https://github.com/cabins/emacs.d][(new)cabins/emacs.d]]
 - [[https://github.com/redguardtoo/emacs.d][3k stars redguardtoo/emacs.d]]
 
 * 插件
@@ -34,3 +48,104 @@ Iosevka SS04
 * config_path
 [[~/.emacs.d/lisp/init-packages.el][package]]
 [[~/.emacs.d/lisp/init-ui.el][font]]
+
+* Org Mode
+** basic
+#+begin_src emacs-lisp
+  (defun efs/org-mode-setup ()
+    (org-indent-mode))
+    ; (variable-pitch-mode 1)
+    ; (visual-line-mode 1))
+
+  (use-package org
+    :pin org
+    :hook (org-mode . efs/org-mode-setup)
+    :config
+    (setq org-ellipsis "▾"))
+    ;(setq org-startup-indented t))
+
+  (use-package org-bullets
+      :after org
+      :hook (org-mode . org-bullets-mode)
+      :custom
+      (org-bullets-bullet-list '("◉" "☯" "○" "☯" "✸" "☯" "✿" "☯" "✜" "☯" "◆" "☯" "▶")))
+
+  ; (dolist (face '((org-level-1 . 1.2)
+  ;                   (org-level-2 . 1.1)
+  ;                   (org-level-3 . 1.05)
+  ;                   (org-level-4 . 1.0)
+  ;                   (org-level-5 . 1.1)
+  ;                   (org-level-6 . 1.1)
+  ;                   (org-level-7 . 1.1)
+  ;                   (org-level-8 . 1.1)))
+  ;     (set-face-attribute (car face) nil :font "JetBrains Mono" :weight 'regular :height (cdr face)))
+#+end_src
+** Keymap
+*** Bacis Key
+| Key     | des                    |
+|---------+------------------------|
+| C-c C-l | Insert Line            |
+| C-enter | create same level link |
+| g-k     |                        |
+| g-l     |                        |
+
+* Develope
+** lsp
+*ok* [[https://emacs-lsp.github.io/lsp-mode/][lsp-mode]]
+
+
+** Languages
+*** Language Servers
+
+#+begin_src emacs-lisp
+
+  (defun efs/lsp-mode-setup ()
+    (setq lsp-headerline-breadcrumb-segments '(path-up-to-project file symbols))
+    (lsp-headerline-breadcrumb-mode))
+
+  (use-package lsp-mode
+    :commands (lsp lsp-deferred)
+    :hook (lsp-mode . efs/lsp-mode-setup)
+    :init
+    (setq lsp-keymap-prefix "C-c l")  ;; Or 'C-l', 's-l'
+    :config
+    (lsp-enable-which-key-integration t))
+
+#+end_src
+
+*** TypeScript
+#+begin_src emacs-lisp
+  (use-package typescript-mode
+    :mode "\\.ts\\'"
+    :hook (typescript-mode . lsp-deferred)
+    :config
+    (setq typescript-indent-level 2))
+
+#+end_src
+
+*** Python
+**** python mode
+#+begin_src emacs-lisp
+  (use-package python-mode
+    :ensure t
+    :hook (python-mode . lsp-deferred)
+    :custom
+    ;; NOTE: Set these if Python 3 is called "python3" on your system!
+    ;; (python-shell-interpreter "python3")
+    ;; (dap-python-executable "python3")
+    (dap-python-debugger 'debugpy)
+    :config
+    (require 'dap-python))
+#+end_src
+
+**** TODO command & key
+| key      | command             | des         |
+|----------+---------------------+-------------|
+| C-c C-p  | run-python          |             |
+| C-c C-l  |                     |             |
+| C-c l gg | lsp-find-definition | defninition |
+| S-right  | toggle TODO         |             |
+
+1. python-shell-send-region
+
+   

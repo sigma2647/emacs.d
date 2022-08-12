@@ -28,7 +28,10 @@
 ; │ theme │
 ; └───────┘
 
-(load-theme 'doom-ayu-dark t)
+;(load-theme 'doom-ayu-dark t)
+
+(load-theme 'doom-sourcerer t)
+
 
 
 (when (file-exists-p custom-file)
