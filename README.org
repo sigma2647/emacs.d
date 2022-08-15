@@ -16,6 +16,8 @@
 - [X] indent line
 - [X] install org-babel-execute
 - [X] last positon
+- 
+
 ** packages
 [[https://github.com/rougier/org-outer-indent][rougier/org-outer-indent]]
 
@@ -31,7 +33,7 @@
 * font
 ** all-the-icons
 - `M-x all-the-icons-install-fonts`
-
+  
 * TODO todo
 ** DONE 添加清华源
 2) 文件树
@@ -44,7 +46,7 @@
 
 * 插件
 - [[https://melpa.org/#/][melpa]]
-
+  
 * 字体
 Iosevka SS04
 
@@ -148,9 +150,22 @@ Iosevka SS04
 | C-c C-l  |                     |             |
 | C-c l gg | lsp-find-definition | defninition |
 | S-right  | toggle TODO         |             |
+| C-c '    |                     |             |
 
-
-   
 
 * Tips
 [[https://www.emacswiki.org/emacs/%e7%b6%b2%e7%ab%99%e5%9c%b0%e5%9c%96][emacswiki]]
+
+* 文件结构
+.demacs.d
+├── lisp
+│   ├──[[~/.emacs.d/lisp/core-keymap.el][core-keymap.el]]
+│   ├──[[~/.emacs.d/lisp/init-elpa.el][init-elpa.el]]
+│   ├──[[~/.emacs.d/lisp/init-evil.el][init-evil.el]]
+│   ├──[[~/.emacs.d/lisp/init-function.el][init-function.el]]
+│   ├──[[~/.emacs.d/lisp/init-options.el][init-options.el]]
+│   ├──[[~/.emacs.d/lisp/init-packages.el][init-packages.el]]
+│   ├──[[~/.emacs.d/lisp/init-startup.el][init-startup.el]]
+│   ├──[[~/.emacs.d/lisp/init-system.el][init-system.el]]
+│   └──[[~/.emacs.d/lisp/init-ui.el][init-ui.el]]
+└── [[~/.emacs.d/init.el][init.el]]

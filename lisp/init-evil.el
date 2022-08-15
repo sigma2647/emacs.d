@@ -26,8 +26,11 @@
   (evil-mode 1)
   (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
   (define-key evil-insert-state-map (kbd ";") 'evil-normal-state)  ; 插入模式下的退出
-  (define-key evil-insert-state-map (kbd "jk") 'evil-normal-state)  ; 插入模式下的退出
+  ;(define-key evil-insert-state-map "jk" 'evil-normal-state)
   (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
+
+  (define-key evil-normal-state-map (kbd "gr") 'lsp-find-references)
+  (define-key evil-normal-state-map (kbd "gd") 'lsp-find-definition)
 
   ;; Use visual line motions even outside of visual-line-mode buffers
   (evil-global-set-key 'motion "j" 'evil-next-visual-line)
