@@ -2,17 +2,26 @@
 ; │ Ui │
 ; └────┘
 
-(menu-bar-mode -1)  ;disable menu bar
-(tool-bar-mode -1)  ;disable tool bar
+(menu-bar-mode -1)	;disable menu bar
+(tool-bar-mode -1)	;disable tool bar
 (scroll-bar-mode -1)
-(recentf-mode 1)  ;recent file
-
-(save-place-mode 1)  ; Remembering Last Editing Positions
-
 (setq inhibit-startup-message t
       visible-bell nil)   ; 忽略启动消息
 
+(setq use-dialog-box nil) ; don't pop up ui dialogs
 (setq initial-scratch-message nil) ;
+
+(global-auto-revert-mode 1)  ;auto refresh buffer content !!
+(setq global-auto-revert-non-file-buffers t)
+
+(recentf-mode 1)	;recent file
+(save-place-mode 1)	; Remembering Last Editing Positions
+
+(setq history-lenth 25)
+(savehist-mode 1)
+
+
+
 (setq ring-bell-function 'ignore)  ; 关闭声音
 
 
