@@ -8,6 +8,7 @@
 
   (rune/leader-keys
     "t"  '(:ignore t :which-key "Toggles")
+    "tt" '(jb-hydra-theme-switcher/body :which-key "Change Theme")
     "e"  '(treemacs :which-key "tree")
     "fc" '(counsel-load-theme :which-key "Choose Theme")
     "fr" '(counsel-recentf :which-key "Recent File")
@@ -38,6 +39,12 @@
   "C-S-e" 'evil-end-of-line
   "C-n" 'evil-next-visual-line
   "C-p" 'evil-previous-visual-line
+  )
+  (general-def
+  :states '(normal)
+  "S" 'save-buffer
+  "H" 'beginning-of-line
+  "L" 'end-of-line
   )
 )
 
