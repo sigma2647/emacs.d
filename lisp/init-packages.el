@@ -22,6 +22,20 @@
   :config
   (ivy-mode 1))
 
+(use-package prescient
+  :config
+  (setq-default history-length 1000)
+  (setq-default prescient-history-length 1000) ;; More prescient history
+  (prescient-persist-mode +1))
+
+;; Use `prescient' for Ivy menus.
+(use-package ivy-prescient
+  :after ivy
+  :config
+  ;; don't prescient sort these commands
+  (dolist (command '(org-ql-view counsel-find-file fontaine-set-preset))
+    (setq ivy-prescient-sort-commands (append ivy-prescient-sort-commands (list command))))
+  (ivy-prescient-mode +1))
 
 (use-package all-the-icons
   :if (display-graphic-p))
@@ -30,6 +44,31 @@
   :ensure t
   :init (doom-modeline-mode 1)
   :custom ((doom-modeline-height 15)))
+
+
+(setq display-time-default-load-average nil)
+
+(line-number-mode)
+(column-number-mode)
+(display-time-mode 1)
+(size-indication-mode 0)
+
+(use-package hide-mode-line
+  :commands (hide-mode-line-mode))
+
+(use-package doom-modeline
+  :config
+  (doom-modeline-mode)
+  (setq doom-modeline-buffer-file-name-style 'relative-from-project ;; Just show file name (no path)
+        doom-modeline-enable-word-count nil
+        doom-modeline-buffer-encoding nil
+        doom-modeline-icon t ;; Enable/disable all icons
+        doom-modeline-modal-icon t ;; Icon for Evil mode
+        doom-modeline-major-mode-icon t
+        doom-modeline-major-mode-color-icon nil
+        doom-modeline-bar-width 3))
+
+;---------
 
 (use-package doom-themes)
 
@@ -212,8 +251,152 @@
  (company-minimum-prefix-length 1)
  (company-idle-delay 0.0))
 
+(use-package gcmh
+  :diminish gcmh-mode
+  :config
+  (setq gcmh-idle-delay 5
+        gcmh-high-cons-threshold (* 16 1024 1024))  ; 16mb
+  (gcmh-mode 1))
+
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (setq gc-cons-percentage 0.1))) ;; Default value for `gc-cons-percentage'
+
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (message "Emacs ready in %s with %d garbage collections."
+                     (format "%.2f seconds"
+                             (float-time
+                              (time-subtract after-init-time before-init-time)))
+                     gcs-done)))
+
+;(use-package yasnippet
+;  :diminish yas-minor-mode
+;  :defer 5
+;  :config
+;  (setq yas-snippet-dirs (list (expand-file-name "snippets" jib/emacs-stuff)))
+;  (yas-global-mode 1)) ;; or M-x yas-reload-all if you've started YASnippet already.
 
   
+(use-package visual-fill-column
+  :defer t
+  :config
+  (setq visual-fill-column-width 100
+        visual-fill-column-center-text t))
+
+(use-package writeroom-mode
+  :defer t
+  :config
+  (setq writeroom-maximize-window nil
+        writeroom-header-line "" ;; Makes sure we have a header line, that's blank
+        writeroom-mode-line t
+        writeroom-global-effects nil) ;; No need to have Writeroom do any of that silly stuff
+  (setq writeroom-width 100))
+
+(use-package centered-cursor-mode
+  :demand
+  ;:diminish centered-cursor-mode
+  :config
+  (global-centered-cursor-mode))
+
+(use-package pyvenv
+  :defer t
+  :init
+  (setenv "WORKON_HOME" "/usr/local/anaconda3/envs/quant/bin/python"))
+
+;; Automatically set the virtual environment when entering a directory
+(use-package auto-virtualenv
+  :defer 2
+  :config
+  (add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv))
 
 
+
+(use-package treemacs
+  :ensure t
+  :defer t
+  :init
+  (with-eval-after-load 'winum
+    (define-key winum-keymap (kbd "M-0") #'treemacs-select-window))
+  :config
+  (progn
+    (setq treemacs-collapse-dirs                   (if treemacs-python-executable 3 0)
+          treemacs-deferred-git-apply-delay        0.5
+          treemacs-directory-name-transformer      #'identity
+          treemacs-display-in-side-window          t
+          treemacs-eldoc-display                   'simple
+          treemacs-file-event-delay                5000
+          treemacs-file-extension-regex            treemacs-last-period-regex-value
+          treemacs-file-follow-delay               0.2
+          treemacs-file-name-transformer           #'identity
+          treemacs-follow-after-init               t
+          treemacs-expand-after-init               t
+          treemacs-find-workspace-method           'find-for-file-or-pick-first
+          treemacs-git-command-pipe                ""
+          treemacs-goto-tag-strategy               'refetch-index
+          treemacs-header-scroll-indicators        '(nil . "^^^^^^")
+          treemacs-hide-dot-git-directory          t
+          treemacs-indentation                     2
+          treemacs-indentation-string              " "
+          treemacs-is-never-other-window           nil
+          treemacs-max-git-entries                 5000
+          treemacs-missing-project-action          'ask
+          treemacs-move-forward-on-expand          nil
+          treemacs-no-png-images                   nil
+          treemacs-no-delete-other-windows         t
+          treemacs-project-follow-cleanup          nil
+          treemacs-persist-file                    (expand-file-name ".cache/treemacs-persist" user-emacs-directory)
+          treemacs-position                        'left
+          treemacs-read-string-input               'from-child-frame
+          treemacs-recenter-distance               0.1
+          treemacs-recenter-after-file-follow      nil
+          treemacs-recenter-after-tag-follow       nil
+          treemacs-recenter-after-project-jump     'always
+          treemacs-recenter-after-project-expand   'on-distance
+          treemacs-litter-directories              '("/node_modules" "/.venv" "/.cask")
+          treemacs-show-cursor                     nil
+          treemacs-show-hidden-files               t
+          treemacs-silent-filewatch                nil
+          treemacs-silent-refresh                  nil
+          treemacs-sorting                         'alphabetic-asc
+          treemacs-select-when-already-in-treemacs 'move-back
+          treemacs-space-between-root-nodes        t
+          treemacs-tag-follow-cleanup              t
+          treemacs-tag-follow-delay                1.5
+          treemacs-text-scale                      nil
+          treemacs-user-mode-line-format           nil
+          treemacs-user-header-line-format         nil
+          treemacs-wide-toggle-width               70
+          treemacs-width                           35
+          treemacs-width-increment                 1
+          treemacs-width-is-initially-locked       t
+          treemacs-workspace-switch-cleanup        nil)
+
+    ;; The default width and height of the icons is 22 pixels. If you are
+    ;; using a Hi-DPI display, uncomment this to double the icon size.
+    ;;(treemacs-resize-icons 44)
+
+    (treemacs-follow-mode t)
+    (treemacs-filewatch-mode t)
+    (treemacs-fringe-indicator-mode 'always)
+    (when treemacs-python-executable
+      (treemacs-git-commit-diff-mode t))
+
+    (pcase (cons (not (null (executable-find "git")))
+                 (not (null treemacs-python-executable)))
+      (`(t . t)
+       (treemacs-git-mode 'deferred))
+      (`(t . _)
+       (treemacs-git-mode 'simple)))
+
+    (treemacs-hide-gitignored-files-mode nil))
+  :bind
+  (:map global-map
+        ("M-0"       . treemacs-select-window)
+        ("C-x t 1"   . treemacs-delete-other-windows)
+        ("C-x t t"   . treemacs)
+        ("C-x t d"   . treemacs-select-directory)
+        ("C-x t B"   . treemacs-bookmark)
+        ("C-x t C-t" . treemacs-find-file)
+        ("C-x t M-t" . treemacs-find-tag)))
 (provide 'init-packages)

@@ -1,3 +1,14 @@
+;; Window configuration
+(setq frame-inhibit-implied-resize t) ;; Supposed to hasten startup
+
+;; Less clutter (this is what dfrosted12 uses so I trust that)
+(add-to-list 'default-frame-alist '(tool-bar-lines . 0))
+(add-to-list 'default-frame-alist '(menu-bar-lines . 0))
+(add-to-list 'default-frame-alist '(vertical-scroll-bars))
+
+;; This makes the Aqua titlebar color the same as Emacs.
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+
 ; ┌────┐
 ; │ Ui │
 ; └────┘
@@ -49,6 +60,21 @@
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 
+(setenv "PATH" "/usr/local/anaconda3/envs/quant/bin/python:")
+
+(winner-mode 1)
+(setq frame-resize-pixelwise t)
+(setq ns-pop-up-frames nil) ;; When opening a file (like double click) on Mac, use an existing frame
+(setq window-resize-pixelwise nil)
+(setq split-width-threshold 80) ;; How thin the window should be to stop splitting vertically (I think)
+(setq sentence-end-double-space nil)  ;; Sentences end with one space
+
+(setq trash-directory "~/.Trash")
+(setq delete-by-moving-to-trash t)
+
+
+
+
 
 
 ; emacs 29
@@ -62,4 +88,13 @@
 			'(("^ *\\([-]\\) "
 			   (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 
+;(setq default-frame-alist '(
+;       (left . 3000)
+;       (width . 3000)
+;       (top . 1000)
+;       (height . 1000)
+;       (fullscreen . fullheight)
+;       (internal-border-width . 8)))
+
 (provide 'init-options)
+

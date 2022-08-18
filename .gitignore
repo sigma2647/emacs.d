@@ -1,3 +1,5 @@
+transient/history.el
+var/prescient-save.el
 /elpa
 /games
 /eln-cache

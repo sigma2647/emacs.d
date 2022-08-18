@@ -8,10 +8,36 @@
 
   (rune/leader-keys
     "t"  '(:ignore t :which-key "Toggles")
+    "e"  '(treemacs :which-key "tree")
     "fc" '(counsel-load-theme :which-key "Choose Theme")
     "fr" '(counsel-recentf :which-key "Recent File")
     "ff" '(find-file :which-key "Find File")
-    "pc" '(eval-buffer :which-key "Packer Compile")
+    "pc" '(eval-buffer :which-key "Packer Compile"))
+
+
+  (general-define-key
+   :states	'(normal motion visual)
+   :keymaps	'override
+   :prefix "SPC"
+   "/" '(swiper :which-key "swiper")
+   "TAB" '(switch-to-prev-buffer :which-key "previous buffer")
+   )
+
+  (general-define-key
+   :states	'(visual)
+   :keymaps	'override
+   :prefix "SPC"
+   "s" '(align-regexp :which-key "previous buffer")
+   )
+
+  (general-def
+  :states '(insert)
+  "C-a" 'evil-beginning-of-visual-line
+  "C-e" 'evil-end-of-visual-line
+  "C-S-a" 'evil-beginning-of-line
+  "C-S-e" 'evil-end-of-line
+  "C-n" 'evil-next-visual-line
+  "C-p" 'evil-previous-visual-line
   )
 )
 
@@ -59,8 +85,35 @@
 (rune/leader-keys
   "ts" '(hydra-text-scale/body :which-key "scale text"))
 
+(defun jib/load-theme (theme)
+  "Enance `load-theme` by si"
+  (mapc #'disable-theme custom-enabled-themes)
+  (load-theme theme t))
 
+(defhydra jb-hydra-theme-switcher (:hint nil)
+    ;; Dark
+  ("1" (jib/load-theme 'doom-one) "one")
+  ("2" (jib/load-theme 'modus-vivendi) "modus-vivendi")
+  ("3" (jib/load-theme 'doom-molokai) "molokai")
+  ("4" (jib/load-theme 'doom-snazzy) "snazzy")
+  ("5" (jib/load-theme 'doom-old-hope) "old-hope")
+  ("6" (jib/load-theme 'doom-henna) "henna")
+  ("7" (jib/load-theme 'kaolin-galaxy) "kaolin-galaxy")
+  ("8" (jib/load-theme 'doom-peacock) "peacock")
+  ("9" (jib/load-theme 'jake-doom-plain-dark) "jake-plain-dark")
+  ("0" (jib/load-theme 'doom-monokai-machine) "monokai-machine")
+  ("-" (jib/load-theme 'doom-xcode) "xcode")
 
+  ;; Light
+  ("z" (jib/load-theme 'doom-one-light) "one-light")
+  ("x" (jib/load-theme 'modus-operandi) "modus-operandi")
+  ("c" (jib/load-theme 'jake-doom-plain) "jake-plain")
+  ("v" (jib/load-theme 'doom-flatwhite) "flatwhite")
+  ("b" (jib/load-theme 'doom-opera-light) "opera-light")
+  ("q" nil))
+
+;(windresize)
+;(windresize-exit)
 
 
 ; https://github.com/zilongshanren/emacs.d/blob/ef9ad86d68efc71978f158912584d6afd0c4c400/lisp/init-evil.el

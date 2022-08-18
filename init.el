@@ -47,6 +47,9 @@
   (setq gc-cons-threshold init-gc-cons-threshold)
   (add-hook 'emacs-startup-hook
             (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
+(setq gc-cons-percentage 0.6)
+
+
 
 ;https://github.com/purcell/emacs.d/blob/master/init.el
 ;大师配置
