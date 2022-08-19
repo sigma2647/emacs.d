@@ -35,7 +35,11 @@
 
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)  ;ecs
 
-
+;; (define org-active-map
+;; 	(kdb "M-j") 'org-metadown
+;; 	(kdb "M-k") 'org-metaup)
+	
+;; (define-key org-active-map (kdb "M-j") 'org-metadown)
 
 (provide 'core-keymap)
 

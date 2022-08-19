@@ -87,13 +87,30 @@ Iosevka SS04
   ;     (set-face-attribute (car face) nil :font "JetBrains Mono" :weight 'regular :height (cdr face)))
 #+end_src
 ** Keymap
-*** Bacis Key
-| Key     | des                    |
-|---------+------------------------|
-| C-c C-l | Insert Line            |
-| C-enter | create same level link |
-| g-k     |                        |
-| g-l     |                        |
+** Bacis Key
+| icon | key       |       |
+|------+-----------+-------|
+| ⌘    | Command   | Super |
+| ⌥    | Option    | Meta  |
+| ⌃    | Ctrl      |       |
+
+| Key      | describe               |
+|----------+------------------------|
+| C⌃-c C-l | Insert Line            |
+| C⌃-enter | create same level link |
+| s⌥-l     | indent right           |
+| s⌥-h     | indent left            |
+| s⌥-k     | move up                |
+| s⌥-j     | move down              |
+
+
+1. sdfdsf
+2. saf
+3. asd
+4. asdf
+5. sad
+
+
 
 * Develope
 ** lsp
@@ -157,6 +174,11 @@ Iosevka SS04
 * Tips
 [[https://www.emacswiki.org/emacs/%e7%b6%b2%e7%ab%99%e5%9c%b0%e5%9c%96][emacswiki]]
 M-x align-regex
+** ivy mode
+
+M-o ivy copy
+M-o ivy copy
+
 
 * 文件结构
 .demacs.d
