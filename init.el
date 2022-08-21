@@ -18,9 +18,9 @@
 (require 'init-elpa)
 (require 'init-packages)
 (require 'init-ui)
-(require 'core-keymap)
 (require 'init-evil)
 (require 'init-function)
+(require 'core-keymap)
 
 
 

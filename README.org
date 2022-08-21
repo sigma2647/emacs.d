@@ -7,20 +7,23 @@
 - [ ] markdown mode
 - [ ] enter goto link
 - [ ] org_indent
-- [ ] math-mode
 - [ ] emacs
+- [ ] math-mode
 - [ ] 搜索
 - [ ] magit
-- [ ] python-shell-send-region
 - [ ] python-shell-send-block
+- [ ] python-shell-send-region
 - [X] indent line
 - [X] install org-babel-execute
-- [X] last positon
 - [ ] hydra
+- [X] last positon
   
+
 
 ** packages
 [[https://github.com/rougier/org-outer-indent][rougier/org-outer-indent]]
+
+
 
 * init
 [[https://github.com/daviwil/emacs-from-scratch/blob/dd9320769f3041ac1edca139496f14abe147d010/Emacs.org#python][daviwil/emacs-from-scratche]]
@@ -87,30 +90,26 @@ Iosevka SS04
   ;     (set-face-attribute (car face) nil :font "JetBrains Mono" :weight 'regular :height (cdr face)))
 #+end_src
 ** Keymap
-** Bacis Key
-| icon | key       |       |
-|------+-----------+-------|
-| ⌘    | Command   | Super |
-| ⌥    | Option    | Meta  |
-| ⌃    | Ctrl      |       |
+| i | key     |       |
+|---+---------+-------|
+| ⌘ | Command | Super |
+| ⌥ | Option  | Meta  |
+| ⌃ | Ctrl    |       |
 
-| Key      | describe               |
-|----------+------------------------|
-| C⌃-c C-l | Insert Line            |
-| C⌃-enter | create same level link |
-| s⌥-l     | indent right           |
-| s⌥-h     | indent left            |
-| s⌥-k     | move up                |
-| s⌥-j     | move down              |
+*** c-c
+| key         | command                |
+|-------------+------------------------|
+| C-enter     | create same level link |
+| C-c C-p     | run-python             |
+| C-c C-l     | Insert Line            |
+| C-c l gg    | lsp-find-definition    |
+| S-right     | toggle TODO            |
+| C-c '       | org-edit-special       |
+| C-c c-x c-l | latex preview          |
 
-
-1. sdfdsf
-2. saf
-3. asd
-4. asdf
-5. sad
-
-
+*** C-h
+| key   | command      |
+| C-h k | describe-key |
 
 * Develope
 ** lsp
@@ -147,6 +146,8 @@ Iosevka SS04
 #+end_src
 
 *** Python
+
+
 **** python mode
 #+begin_src emacs-lisp
   (use-package python-mode
@@ -160,16 +161,6 @@ Iosevka SS04
     :config
     (require 'dap-python))
 #+end_src
-
-**** TODO command & key
-| key      | command             | des         |
-|----------+---------------------+-------------|
-| C-c C-p  | run-python          |             |
-| C-c C-l  |                     |             |
-| C-c l gg | lsp-find-definition | defninition |
-| S-right  | toggle TODO         |             |
-| C-c '    |                     |             |
-
 
 * Tips
 [[https://www.emacswiki.org/emacs/%e7%b6%b2%e7%ab%99%e5%9c%b0%e5%9c%96][emacswiki]]

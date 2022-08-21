@@ -122,11 +122,46 @@
 ;(windresize)
 ;(windresize-exit)
 
+
+(evil-define-key 'normal org-mode-map (kbd "RET") 'org-open-at-point)
+(evil-define-key 'normal org-mode-map (kbd "M-j") 'org-metadown)
+(evil-define-key 'normal org-mode-map (kbd "M-k") 'org-metaup)
+(evil-define-key 'normal org-mode-map (kbd "Y") (9 . evil-ex-yank))
+
+
+;; Symbol Properties
+;; event-symbol-element-mask
+;;   (evil-ex-yank 0)
+;; event-symbol-elements
+;;   (evil-ex-yank)
+;; modifier-cache
+;;   ((0 . evil-ex-yank))
+
+;; ;(define-key evil-normal-state-map (kbd "Y") 'evil-ex-yank evil-end-of-line)
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;
+;; highlight yank ;;
+;;;;;;;;;;;;;;;;;;;;
+(defun meain/evil-yank-advice (orig-fn beg end &rest args)
+  (pulse-momentary-highlight-region beg end)
+  (apply orig-fn beg end args))
+
+(advice-add 'evil-yank :around 'meain/evil-yank-advice)
+
+
+;;;;;;;;;;;;;;;;;;;;
+;; evil-multiedit ;;
+;;;;;;;;;;;;;;;;;;;;
 (use-package evil-multiedit)
 (evil-multiedit-default-keybinds)
-
 ;; Highlights all matches of the selection in the buffer.
 (define-key evil-visual-state-map "R" 'evil-multiedit-match-all)
+
 
 ;; Match the word under cursor (i.e. make it an edit region). Consecutive presses will
 ;; incrementally add the next unmatched match.

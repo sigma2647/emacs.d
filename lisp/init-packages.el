@@ -117,7 +117,10 @@
   :hook (org-mode . efs/org-mode-setup)
   :config
   (setq org-ellipsis " ▾"))
-  ;(setq org-startup-indented t))
+  ;; :bind(:map org-mode-map
+  ;; 	   ("<M-up>"	 . nil)
+  ;; 	   ("<M-down>"	 . nil))
+  ;; (setq org-startup-indented t))
 
 (use-package org-bullets
     :after org
