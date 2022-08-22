@@ -122,11 +122,16 @@
 ;(windresize)
 ;(windresize-exit)
 
-
+;;;;;;;;;;;
+;; remap ;;
+;;;;;;;;;;;
 (evil-define-key 'normal org-mode-map (kbd "RET") 'org-open-at-point)
 (evil-define-key 'normal org-mode-map (kbd "M-j") 'org-metadown)
 (evil-define-key 'normal org-mode-map (kbd "M-k") 'org-metaup)
 (evil-define-key 'normal org-mode-map (kbd "Y") (9 . evil-ex-yank))
+
+;; (evil-define-key 'visual org-mode-map (kbd "}") 'evil-forward-paragraph)
+;; (evil-define-key 'visual org-mode-map (kbd "{") 'evil-backward-paragraph)
 
 
 ;; Symbol Properties

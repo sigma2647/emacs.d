@@ -1,5 +1,6 @@
 ;; Window configuration
 (setq frame-inhibit-implied-resize t) ;; Supposed to hasten startup
+(set-background-color "chocolate3")
 
 ;; Less clutter (this is what dfrosted12 uses so I trust that)
 (add-to-list 'default-frame-alist '(tool-bar-lines . 0))
@@ -35,6 +36,10 @@
 
 (setq ring-bell-function 'ignore)  ; 关闭声音
 
+;;;;;;;;;
+;; org ;;
+;;;;;;;;;
+(setq org-M-RET-may-split-line '((headline . nil)))
 
 ; ┌────────┐
 ; │ editor │
@@ -96,6 +101,17 @@
 ;       (height . 1000)
 ;       (fullscreen . fullheight)
 ;       (internal-border-width . 8)))
+
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((emacs-lisp . t)
+   (python . t)))
+(setq org-confirm-babel-evaluate nil)
+
+
+
+(add-to-list 'exec-path "/usr/local/anaconda3/envs/quant/bin/python")
 
 (provide 'init-options)
 

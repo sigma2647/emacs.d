@@ -194,12 +194,6 @@
 
 
 
-;-----------
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((emacs-lisp . t)
-   (python . t)))
-(setq org-confirm-babel-evaluate nil)
 
 
 (require 'org-tempo)
@@ -225,6 +219,7 @@
     :hook (typescript-mode . lsp-deferred)
     :config
     (setq typescript-indent-level 2))
+
 
 (use-package python-mode
   :ensure t
@@ -302,17 +297,20 @@
   :config
   (global-centered-cursor-mode))
 
-(use-package pyvenv
-  :defer t
-  :init
-  (setenv "WORKON_HOME" "/usr/local/anaconda3/envs/quant/bin/python"))
+;; (use-package pyvenv
+;;   :defer t
+;;   :config
+;;   (pyvenv-mode 1)
+;;   :init
+;;   (setenv "WORKON_HOME"))
 
-;; Automatically set the virtual environment when entering a directory
-(use-package auto-virtualenv
-  :defer 2
-  :config
-  (add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv))
-
+;
+; ;; Automatically set the virtual environment when entering a directory
+; (use-package auto-virtualenv
+;   :defer 2
+;   :config
+;   (add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv))
+;
 
 
 (use-package treemacs
@@ -404,5 +402,17 @@
         ("C-x t M-t" . treemacs-find-tag)))
 
 
+;; (require 'ivy-posframe)
+;; (use-package ivy-posframe)
+;; (ivy-posframe-mode 1)
+
+(use-package jupyter
+    :defer t
+    :init
+    (setq org-babel-default-header-args:jupyter-python '((:async . "yes")
+                                                         (:session . "py"))
+          org-babel-default-header-args:jupyter-R '((:async . "yes"))))
+
 
 (provide 'init-packages)
+

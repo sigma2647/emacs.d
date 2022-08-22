@@ -165,10 +165,11 @@ Iosevka SS04
 * Tips
 [[https://www.emacswiki.org/emacs/%e7%b6%b2%e7%ab%99%e5%9c%b0%e5%9c%96][emacswiki]]
 M-x align-regex
+
 ** ivy mode
 
-M-o ivy copy
-M-o ivy copy
+| M-o | ivy copy |
+| C-n |          |
 
 
 * 文件结构
