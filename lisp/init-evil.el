@@ -42,7 +42,7 @@
   (general-def
   :states '(normal visual)
   "S" 'save-buffer
-  "H" 'beginning-of-line
+  "H" 'evil-first-non-blank
   "L" 'end-of-line
   )
 )
