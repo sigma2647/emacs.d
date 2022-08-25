@@ -64,6 +64,9 @@ Iosevka SS04
 [[~/.emacs.d/lisp/init-packages.el][package]]
 [[~/.emacs.d/lisp/init-ui.el][font]]
 
+* Markdown mode
+- [[https://github.com/jrblevin/markdown-mode][jrblevin/markdown-mode]]
+   
 * Org Mode
 ** basic
 #+begin_src emacs-lisp
@@ -191,3 +194,6 @@ M-x align-regex
 │   ├──[[~/.emacs.d/lisp/init-system.el][init-system.el]]
 │   └──[[~/.emacs.d/lisp/init-ui.el][init-ui.el]]
 └── [[~/.emacs.d/init.el][init.el]]
+
+For thoese
+0

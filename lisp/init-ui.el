@@ -36,8 +36,7 @@
 ;; (set-font "Maple Mono" "Sarasa Mono SC Nerd" 14 14)
 ;; (set-font "Maple Mono" "Microsoft YaHei Mono" 14 14)
 ;; (set-font "Maple Mono" "Microsoft YaHei Mono" 14 14)
-(set-font "MesloLGL Nerd Font Mono" "Sarasa Mono SC Nerd" 14 14)
-  
+; (set-font "MesloLGL Nerd Font Mono" "Sarasa Mono SC Nerd" 14 14)
 
 
 

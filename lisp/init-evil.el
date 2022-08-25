@@ -8,6 +8,7 @@
 
   (rune/leader-keys
     "t"  '(:ignore t :which-key "Toggles")
+    "H"  '(dashboard-refresh-buffer :which-key "buffer")
     "tt" '(jb-hydra-theme-switcher/body :which-key "Change Theme")
     "e"  '(treemacs :which-key "tree")
     "fc" '(counsel-load-theme :which-key "Choose Theme")

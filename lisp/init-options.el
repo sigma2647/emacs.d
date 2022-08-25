@@ -100,6 +100,10 @@
 			'(("^ *\\([-]\\) "
 			   (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
 
+; (font-lock-add-keywords 'markdown-mode
+; 			'(("^ *\\([-]\\) "
+; 			   (0 (prog1 () (compose-region (match-beginning 1) (match-end 1) "•"))))))
+
 ;(setq default-frame-alist '(
 ;       (left . 3000)
 ;       (width . 3000)
@@ -120,7 +124,6 @@
  )
 
 (setq org-confirm-babel-evaluate nil)
-
 
 
 

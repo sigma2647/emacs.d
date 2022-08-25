@@ -415,6 +415,40 @@
           org-babel-default-header-args:jupyter-R '((:async . "yes"))))
 
 ;; evilcomment
+;
+; (use-package eaf
+;   :load-path "~/.emacs.d/site-lisp/emacs-application-framework"
+;   :custom
+;   ; See https://github.com/emacs-eaf/emacs-application-framework/wiki/Customization
+;   (eaf-browser-continue-where-left-off t)
+;   (eaf-browser-enable-adblocker t)
+;   (browse-url-browser-function 'eaf-open-browser)
+;   :config
+;   (defalias 'browse-web #'eaf-open-browser)
+;   (eaf-bind-key scroll_up "C-n" eaf-pdf-viewer-keybinding)
+;   (eaf-bind-key scroll_down "C-p" eaf-pdf-viewer-keybinding)
+;   (eaf-bind-key take_photo "p" eaf-camera-keybinding)
+;   (eaf-bind-key nil "M-q" eaf-browser-keybinding)) ;; unbind, see more in the Wiki
+;
+; (add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-application-framework/")
+;
+; (require 'eaf-browser)
+; (require 'eaf)
+; (require 'eaf-pdf-viewer)
+
+(use-package markdown-mode
+  :ensure t
+  :mode ("README\\.md\\'" . gfm-mode)
+  :hook (markdown-mode . visual-line-mode)
+  :init (setq markdown-command "multimarkdown")
+  :custom
+  (markdown-header-scaling               t)
+  (markdown-enable-wiki-links            t)
+  (markdown-italic-underscore            t)
+  (markdown-asymmetric-header            t)
+  (markdown-gfm-uppercase-checkbox       t)
+  (markdown-enable-math                  t)
+  (markdown-fontify-code-blocks-natively t))
 
 (provide 'init-packages)
 
