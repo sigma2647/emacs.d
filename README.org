@@ -20,6 +20,7 @@
   
 
 
+* sdf
 ** packages
 [[https://github.com/rougier/org-outer-indent][rougier/org-outer-indent]]
 
@@ -66,6 +67,46 @@ Iosevka SS04
 
 * Markdown mode
 - [[https://github.com/jrblevin/markdown-mode][jrblevin/markdown-mode]]
+** Markdownmode keymap
+
+| C-c C-s C-h | help         |
+| C-c C-s b   | bold         |
+| C-c C-i     | insert link  |
+| C-c C-s h   | heading      |
+| C-c C-s c   | inline block |
+|             |              |
+
+| C-c C-s ! | markdown-insert-header-setext-1    |
+| C-c C-s - | markdown-insert-hr                 |
+| C-c C-s 1 | markdown-insert-header-atx-1       |
+| C-c C-s 2 | markdown-insert-header-atx-2       |
+| C-c C-s 3 | markdown-insert-header-atx-3       |
+| C-c C-s 4 | markdown-insert-header-atx-4       |
+| C-c C-s 5 | markdown-insert-header-atx-5       |
+| C-c C-s 6 | markdown-insert-header-atx-6       |
+| C-c C-s @ | markdown-insert-header-setext-2    |
+| C-c C-s C | markdown-insert-gfm-code-block     |
+| C-c C-s F | markdown-insert-foldable-block     |
+| C-c C-s H | markdown-insert-header-setext-dwim |
+| C-c C-s P | markdown-pre-region                |
+| C-c C-s Q | markdown-blockquote-region         |
+| C-c C-s [ | markdown-insert-gfm-checkbox       |
+| C-c C-s b | markdown-insert-bold               |
+| C-c C-s c | markdown-insert-code               |
+| C-c C-s e | markdown-insert-italic             |
+| C-c C-s f | markdown-insert-footnote           |
+| C-c C-s h | markdown-insert-header-dwim        |
+| C-c C-s i | markdown-insert-italic             |
+| C-c C-s k | markdown-insert-kbd                |
+| C-c C-s l | markdown-insert-link               |
+| C-c C-s p | markdown-insert-pre                |
+| C-c C-s q | markdown-insert-blockquote         |
+| C-c C-s s | markdown-insert-strike-through     |
+| C-c C-s t | markdown-insert-table              |
+| C-c C-s w | markdown-insert-wiki-link          |
+
+
+
    
 * Org Mode
 ** basic
@@ -174,11 +215,12 @@ Iosevka SS04
 * Tips
 [[https://www.emacswiki.org/emacs/%e7%b6%b2%e7%ab%99%e5%9c%b0%e5%9c%96][emacswiki]]
 M-x align-regex
-
 ** ivy mode
 
 | M-o | ivy copy |
 | C-n |          |
+** find simular
+[[https://www.libhunt.com][hi]]
 
 
 * 文件结构
@@ -195,5 +237,3 @@ M-x align-regex
 │   └──[[~/.emacs.d/lisp/init-ui.el][init-ui.el]]
 └── [[~/.emacs.d/init.el][init.el]]
 
-For thoese
-0

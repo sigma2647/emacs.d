@@ -10,7 +10,13 @@
 
 ;set fontsize
 ;(set-face-attribute 'default nil :height 170)
-;; (set-frame-font "Maple Mono 15" nil t)
+
+; ┌──────────────┐
+; │ markdon font │
+; └──────────────┘
+(dolist (mode '(markdown-mode-hook))
+  (add-hook mode (lambda () (set-frame-font "Maple Mono 15" nil t))))
+
 
 
 ;; (set-frame-font "Microsoft YaHei Mono" nil t)
@@ -35,7 +41,7 @@
 
 ;; (set-font "Maple Mono" "Sarasa Mono SC Nerd" 14 14)
 ;; (set-font "Maple Mono" "Microsoft YaHei Mono" 14 14)
-;; (set-font "Maple Mono" "Microsoft YaHei Mono" 14 14)
+;(set-font "Maple Mono" "Microsoft YaHei Mono" 14 14)
 ; (set-font "MesloLGL Nerd Font Mono" "Sarasa Mono SC Nerd" 14 14)
 
 

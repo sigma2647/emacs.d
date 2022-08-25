@@ -282,14 +282,56 @@
   (setq visual-fill-column-width 100
         visual-fill-column-center-text t))
 
-(use-package writeroom-mode
-  :defer t
-  :config
-  (setq writeroom-maximize-window nil
-        writeroom-header-line "" ;; Makes sure we have a header line, that's blank
-        writeroom-mode-line t
-        writeroom-global-effects nil) ;; No need to have Writeroom do any of that silly stuff
-  (setq writeroom-width 100))
+; (use-package writeroom-mode
+;   :defer t
+;   :config
+;   (setq writeroom-maximize-window nil
+;         writeroom-header-line "" ;; Makes sure we have a header line, that's blank
+;         writeroom-mode-line t
+;         writeroom-global-effects nil) ;; No need to have Writeroom do any of that silly stuff
+;   (setq writeroom-width 100))
+
+; (use-package writeroom-mode
+;   :hook (after-init . global-writeroom-mode)
+;   :config
+;   (setq split-width-threshold 120
+;
+;         writeroom-width 128
+;         writeroom-bottom-divider-width 0
+;         writeroom-fringes-outside-margins t
+;         writeroom-fullscreen-effect nil
+;         writeroom-major-modes '(text-mode prog-mode conf-mode special-mode Info-mode dired-mode)
+;         writeroom-major-modes-exceptions '(process-menu-mode proced-mode)
+;         writeroom-maximize-window nil
+;         writeroom-mode-line t
+;         writeroom-mode-line-toggle-position 'mode-line-format))
+
+; (global-writeroom-mode 1)
+; (add-hook 'org-agenda-mode-hook (lambda() (writeroom-mode)))
+; (add-hook 'org-agenda-mode-hook (lambda() (writeroom-mode)))
+; (add-hook 'telega-root-mode-hook (lambda () (writeroom-mode 1)))
+; (add-hook 'java-mode-hook (lambda () (writeroom-mode nil)))
+; (add-hook 'python-mode-hook (lambda () (writeroom-mode nil)))
+
+
+(use-package olivetti)
+;; (use-package olivetti
+;;   :diminish
+;;   :bind ("<f8>" . olivetti-mode)
+;;   :init
+;;   (setq olivetti-body-width 0.618)
+;;   (defun xs-toggle-olivetti-for-org ()
+;;     "if current buffer is org and only one visible buffer enable olivetti mode"
+;;     (if (and (eq (buffer-local-value 'major-mode (current-buffer)) 'org-mode)
+;; 	     (or (eq (length (window-list nil nil nil)) 1)
+;; 		 (window-at-side-p (frame-first-window) 'right))) ;; frame-first-window 的 mode 是 org-mode 并且没有右边 window
+;; 	(olivetti-mode 1)
+;;       (olivetti-mode 0)
+;;       (when (eq (buffer-local-value 'major-mode (current-buffer)) 'org-mode)
+;;         (visual-line-mode 1))))
+;;   (add-hook 'org-mode-hook #'xs-toggle-olivetti-for-org)
+;;   (add-hook 'window-configuration-change-hook #'xs-toggle-olivetti-for-org))
+
 
 (use-package centered-cursor-mode
   :demand

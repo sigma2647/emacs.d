@@ -32,7 +32,9 @@
 (setq global-auto-revert-non-file-buffers t)
 
 (recentf-mode 1)	;recent file
-(save-place-mode 1)	; Remembering Last Editing Positions
+
+(require 'saveplace)
+(setq-default save-place t)
 
 (setq history-lenth 25)
 (savehist-mode 1)
@@ -58,18 +60,28 @@
 
 
 
-;; 不显示行号
+;; 显示行号
 (dolist (mode '(text-mode-hook
                 prog-mode-hook
-                shell-mode-hook
+                ; shell-mode-hook
                 conf-mode-hook
-		treemacs-mode-hook))
+                ))
   (add-hook mode (lambda () (display-line-numbers-mode 1))))
 
-;; Override some modes which derive from the above
-(dolist (mode '(org-mode-hook))
+
+;; 不显示行号
+(dolist (mode '(org-mode-hook
+                shell-mode-hook
+                markdown-mode-hook
+                ))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
+
+(dolist (mode '(
+                markdown-mode-hook
+                org-mode-hook
+                ))
+  (add-hook mode (lambda () (olivetti-mode 1))))
 
 
 (winner-mode 1)
