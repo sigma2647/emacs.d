@@ -71,7 +71,6 @@
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 
-; (setenv "PATH" "/usr/local/anaconda3/envs/quant/bin/python:")
 
 (winner-mode 1)
 (setq frame-resize-pixelwise t)
@@ -113,14 +112,14 @@
 ;;;;;;;;;;;;;;;
 ;; org-babel ;;
 ;;;;;;;;;;;;;;;
-; (org-babel-do-load-languages 'org-babel-load-languages
-;  '(
-;     (emacs-lisp . t)
-;     (shell . t)
-;     (python . t))
-;  )
-;
-; (setq org-confirm-babel-evaluate nil)
+(org-babel-do-load-languages 'org-babel-load-languages
+ '(
+    (emacs-lisp . t)
+    (shell . t)
+    (python . t))
+ )
+
+(setq org-confirm-babel-evaluate nil)
 
 
 

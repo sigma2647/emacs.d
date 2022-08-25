@@ -295,7 +295,8 @@
   :demand
   ;:diminish centered-cursor-mode
   :config
-  (global-centered-cursor-mode))
+  ;; (global-centered-cursor-mode)
+  )
 
 ;; (use-package pyvenv
 ;;   :defer t
