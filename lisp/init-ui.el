@@ -19,7 +19,7 @@
 
 
 
-;; (set-frame-font "Microsoft YaHei Mono" nil t)
+(set-frame-font "JetBrains Mono" nil t)
 
 
 ;(set-frame-font emacs-english-font emacs-cjk-font '(20 . 12))

@@ -10,7 +10,6 @@
     "t"  '(:ignore t :which-key "Toggles")
     "H"  '(dashboard-refresh-buffer :which-key "buffer")
     "tt" '(jb-hydra-theme-switcher/body :which-key "Change Theme")
-    "e"  '(treemacs :which-key "tree")
     "fc" '(counsel-load-theme :which-key "Choose Theme")
     "fr" '(counsel-recentf :which-key "Recent File")
     "ff" '(find-file :which-key "Find File")
@@ -21,6 +20,7 @@
    :states	'(normal motion visual)
    :keymaps	'override
    :prefix "SPC"
+   "e"  '(treemacs :which-key "tree")
    "/" '(swiper :which-key "swiper") "TAB" '(switch-to-prev-buffer :which-key "previous buffer")
    )
 
@@ -129,7 +129,8 @@
 (evil-define-key 'normal org-mode-map (kbd "RET") 'org-open-at-point)
 (evil-define-key 'normal org-mode-map (kbd "M-j") 'org-metadown)
 (evil-define-key 'normal org-mode-map (kbd "M-k") 'org-metaup)
-(evil-define-key 'normal org-mode-map (kbd "Y") (9 . evil-ex-yank))
+
+(evil-define-key 'normal markdown-mode-map (kbd "RET") 'markdown-follow-thing-at-point)
 
 ;; (evil-define-key 'visual org-mode-map (kbd "}") 'evil-forward-paragraph)
 ;; (evil-define-key 'visual org-mode-map (kbd "{") 'evil-backward-paragraph)
