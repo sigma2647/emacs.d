@@ -83,10 +83,12 @@
 
 
 
-; emacs 29
-
+;;;;;;;;;;;;;;
+;; emacs 29 ;;
+;; 像素滚动 ;;
+;;;;;;;;;;;;;;
 (when (>= emacs-major-version 29)
-    (pixel-scroll-precision-mode)) ;像素滚动
+    (pixel-scroll-precision-mode)) 
 
 
 ; Replace list hyphen with dot

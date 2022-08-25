@@ -4,6 +4,9 @@
 (setq custom-file (locate-user-emacs-file "custom.el"))
 
 
+(set-frame-size (selected-frame) 750 560 'pixelwise)
+(setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
+
 ; ┌──────────┐
 ; │ 默认路径 │
 ; └──────────┘
@@ -57,5 +60,4 @@
 
 
 
-(setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
 
