@@ -1,6 +1,5 @@
 ;; Window configuration
 (setq frame-inhibit-implied-resize t) ;; Supposed to hasten startup
-(set-background-color "chocolate3")
 
 ;; Less clutter (this is what dfrosted12 uses so I trust that)
 (add-to-list 'default-frame-alist '(tool-bar-lines . 0))
@@ -13,6 +12,8 @@
 ; ┌────┐
 ; │ Ui │
 ; └────┘
+(defun spacemacs/xclipboard-copy ()
+  )
 
 (menu-bar-mode -1)	;disable menu bar
 (tool-bar-mode -1)	;disable tool bar

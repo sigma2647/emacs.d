@@ -6,6 +6,7 @@
  '(custom-safe-themes
    '("1436985fac77baf06193993d88fa7d6b358ad7d600c1e52d12e64a2f07f07176" default)))
 
+(set-background-color "chocolate3")
 
 
 ;set fontsize
