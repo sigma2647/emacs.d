@@ -95,16 +95,16 @@
 	 :map minibuffer-local-map
 	 ("C-r" . 'counsel-minibuffer-history)))
 
-(use-package helpful
-  :ensure t
-  :custom
-  (counsel-describe-function-function #'helpful-callable)
-  (counsel-describe-variable-function #'helpful-variable)
-  :bind
-  ([remap describe-function] . counsel-describe-function)
-  ([remap describe-command] . helpful-command)
-  ([remap describe-variable] . counsel-describe-varibale)
-  ([remap describe-key] . helpful-key))
+;; (use-package helpful
+;;   :ensure t
+;;   :custom
+;;   (counsel-describe-function-function #'helpful-callable)
+;;   ;; (counsel-describe-variable-function #'helpful-variable)
+;;   :bind
+;;   ([remap describe-function] . counsel-describe-function)
+;;   ([remap describe-command] . helpful-command)
+;;   ([remap describe-variable] . counsel-describe-varibale)
+;;   ([remap describe-key] . helpful-key))
 
 ;
 (defun efs/org-mode-setup ()
@@ -248,6 +248,8 @@
  :custom
  (company-minimum-prefix-length 1)
  (company-idle-delay 0.0))
+
+
 
 (use-package gcmh
   :diminish gcmh-mode
@@ -613,7 +615,6 @@
 
 
 (use-package lpy)
-
 (provide 'init-packages)
 
 
