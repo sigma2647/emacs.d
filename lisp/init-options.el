@@ -6,18 +6,22 @@
 (add-to-list 'default-frame-alist '(menu-bar-lines . 0))
 (add-to-list 'default-frame-alist '(vertical-scroll-bars))
 
+(set-background-color "chocolate3")
 ;; This makes the Aqua titlebar color the same as Emacs.
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 
 ; ┌────┐
 ; │ Ui │
 ; └────┘
-(defun spacemacs/xclipboard-copy ()
-  )
+(defun guiconfig ()
+  (if (display-graphic-p)
+      (progn
+	(menu-bar-mode -1)	;disable menu bar
+	(tool-bar-mode -1)	;disable tool bar
+	(scroll-bar-mode -1))))
 
-(menu-bar-mode -1)	;disable menu bar
-(tool-bar-mode -1)	;disable tool bar
-(scroll-bar-mode -1)
+(guiconfig)
+
 (setq inhibit-startup-message t
       visible-bell nil)   ; 忽略启动消息
 
@@ -67,7 +71,7 @@
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 
-(setenv "PATH" "/usr/local/anaconda3/envs/quant/bin/python:")
+; (setenv "PATH" "/usr/local/anaconda3/envs/quant/bin/python:")
 
 (winner-mode 1)
 (setq frame-resize-pixelwise t)
@@ -106,15 +110,20 @@
 ;       (internal-border-width . 8)))
 
 
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((emacs-lisp . t)
-   (python . t)))
-(setq org-confirm-babel-evaluate nil)
+;;;;;;;;;;;;;;;
+;; org-babel ;;
+;;;;;;;;;;;;;;;
+; (org-babel-do-load-languages 'org-babel-load-languages
+;  '(
+;     (emacs-lisp . t)
+;     (shell . t)
+;     (python . t))
+;  )
+;
+; (setq org-confirm-babel-evaluate nil)
 
 
 
-(add-to-list 'exec-path "/usr/local/anaconda3/envs/quant/bin/python")
 
 (provide 'init-options)
 

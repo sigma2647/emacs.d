@@ -2,11 +2,10 @@
 ; │ Theme │
 ; └───────┘
 
-(custom-set-variables
- '(custom-safe-themes
-   '("1436985fac77baf06193993d88fa7d6b358ad7d600c1e52d12e64a2f07f07176" default)))
+;; (custom-set-variables
+;;  '(custom-safe-themes
+;;    '("1436985fac77baf06193993d88fa7d6b358ad7d600c1e52d12e64a2f07f07176" default)))
 
-(set-background-color "chocolate3")
 
 
 ;set fontsize
@@ -20,44 +19,26 @@
 ;(set-frame-font emacs-english-font emacs-cjk-font '(20 . 12))
 
 
-;(defun create-frame-font-mac()
-;  ;; English
-;  (set-face-attribute
-;   'default nil :font "Maple Mono 14")
-;  (dolist (charset '( han symbol cjk-misc bopomofo))
-;  ;; Chinese
-;    (set-fontset-font (frame-parameter nil 'font)
-;  					  charset
-;                      (font-spec :family "Microsoft YaHei Mono" :size 16))))
-  ;; ;; Japanese
-  ;; (set-fontset-font (frame-parameter nil 'font)
-  ;; ;; 'kana
-  ;; (font-spec :family "Hiragino Sans" :size 16))
-  ;; ;; Korean
-  ;; (set-fontset-font (frame-parameter nil 'font)
-  ;; ;; 'hangul
-  ;; (font-spec :family "Apple SD Gothic Neo" :size 18))
-  ;; )
 
+(defun set-font(english chinese english-size chinese-size)
+ ;; English
+ (set-face-attribute
+  'default nil :font
+  (format "%s:pixelsize=%d"  english english-size))
 
+ (dolist (charset '( han symbol cjk-misc bopomofo))
 
-(defun set-font (english chinese english-size chinese-size)
-  (set-face-attribute
-   'default nil :font
-   (format "%s:pixelsize=%d"  english english-size))
-
-  (dolist
-      (charset
-       '(kana han symbol cjk-misc bopomofo))
-    (set-fontset-font
-     (frame-parameter nil 'font) charset
-     (font-spec :family chinese :size chinese-size))))
-
+ ;; Chinese
+   (set-fontset-font
+    (frame-parameter nil 'font) charset
+    (font-spec :family chinese :size chinese-size))))
 
 ;; (set-font "Maple Mono" "Sarasa Mono SC Nerd" 14 14)
 ;; (set-font "Maple Mono" "Microsoft YaHei Mono" 14 14)
 ;; (set-font "Maple Mono" "Microsoft YaHei Mono" 14 14)
 (set-font "MesloLGL Nerd Font Mono" "Sarasa Mono SC Nerd" 14 14)
+  
+
 
 
 
@@ -94,6 +75,7 @@
  ;;'(org-level-8 ((t (,@headline ,@variable-tuple))))
 
  '(org-document-title ((t (,@headline ,@variable-tuple :height 2.0 :underline nil)))))
+
 
 
 
