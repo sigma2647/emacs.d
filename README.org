@@ -1,4 +1,23 @@
 * TODO
+centaur-logo
+#+begin_src emacs-lisp
+  (defcustom centaur-logo (expand-file-name
+                           (if (display-graphic-p) "logo.png" "banner.txt")
+                           user-emacs-directory)
+    "Set Centaur logo. nil means official logo."
+    :group 'centaur
+    :type 'string)
+
+  (setq dashboard-banner-logo-title "CENTAUR EMACS - Enjoy Programming & Writing"
+          dashboard-startup-banner (or centaur-logo 'official)
+#+end_src
+
+
+https://sourcegraph.com/search?q=context:global+repo:%5Egithub%5C.com/seagle0128/%5C.emacs%5C.d%24+centaur-logo&patternType=standard
+
+https://github.com/seagle0128/.emacs.d
+[[https://github.com/seagle0128/.emacs.d][todo_config]]
+
 - [ ] 历史命令
 - [ ] lsp
 - [ ] cmp补全

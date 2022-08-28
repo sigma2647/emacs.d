@@ -14,8 +14,8 @@
 ; ┌──────────────┐
 ; │ markdon font │
 ; └──────────────┘
-(dolist (mode '(markdown-mode-hook))
-  (add-hook mode (lambda () (set-frame-font "Maple Mono 15" nil t))))
+; (dolist (mode '(markdown-mode-hook))
+;   (add-hook mode (lambda () (set-frame-font "Maple Mono 15" nil t))))
 
 
 
@@ -41,21 +41,21 @@
 
 ;; (set-font "Maple Mono" "Sarasa Mono SC Nerd" 14 14)
 ;; (set-font "Maple Mono" "Microsoft YaHei Mono" 14 14)
-;(set-font "Maple Mono" "Microsoft YaHei Mono" 14 14)
-; (set-font "MesloLGL Nerd Font Mono" "Sarasa Mono SC Nerd" 14 14)
+;; (set-font "Maple Mono" "Microsoft YaHei Mono" 14 14)
+;; (set-font "MesloLGL Nerd Font Mono" "Sarasa Mono SC Nerd" 14 14)
 
 
 
 
 (custom-set-faces
  '(aw-leading-char-face ((t (:inherit ace-jump-face-foreground :height 3.0))))
- ;; '(org-block-begin-line ((t (:extend t :background "#f7e0c3" :foreground "gray"
- ;;                             :weight semi-bold :height 151 :family "CMU Typewriter Text"))))
+ ; '(org-block-begin-line ((t (:extend t :background "#f7e0c3" :foreground "gray"
+ ;                              :weight semi-bold :height 151 :family "Maple Mono"))))
 
  '(org-code ((t (
 		 ;; :foreground "#957f5f"
-		    :family "MesloLGSDZ Nerd Font Mono"))))
- ;; '(org-document-title ((t (:foreground "Maple Mono" :weight bold :height 2.0))))
+		    :family "JetBrains Mono"))))
+ '(org-document-title ((t (:foreground "Maple Mono" :weight bold :height 2.0))))
  ;; '(org-hide ((t (:foreground "#E5E9F0" :height 0.1))))
 
  ;; '(org-list-dt ((t (:foreground "#7382a0"))))
@@ -64,15 +64,24 @@
  '(org-block ((t (:inherit fixed-pitch))))
  '(org-verbatim ((t (:inherit (shadow fixed-pitch)))))
  ;; TODO set the color following this
- ;; '(org-block ((t (:extend t :background "#f7e0c3" :foreground "#5b5143" :family "Latin Modern Mono"))))
+ '(org-block ((t (:extend t
+			  ;; :background "#f7e0c3"
+			  ;; :foreground "#5b5143"
+			  :family "JetBrains Mono"))))
  '(org-code ((t (:inherit (shadow fixed-pitch)))))
  ;; '(variable-pitch ((t (:family "DejaVu Serif" :height 150))))
  ;; '(fixed-pitch ((t (:family "mononoki" :height 160))))
- '(org-level-1 ((t (:inherit outline-1 :foreground "#076678" :weight extra-bold
-                    :height 1.25))))
- '(org-level-2 ((t (:inherit outline-2 :foreground "#EEC591" :height 1.15 :family
-                    "Maple Mono"))))
- '(org-level-3 ((t (:inherit outline-3 :height 1.0  :family "Maple Mono"))))
+
+ ;;;;;;;;;;;;;
+ ;; heading ;;
+ ;;;;;;;;;;;;;
+ '(org-level-1 ((t (:inherit outline-1 :height 1.25 :family "Maple Mono"
+			     ;; :foreground "#076678"
+			     ))))
+ '(org-level-2 ((t (:inherit outline-2 :height 1.15 :family "Maple Mono"
+			     ;; :foreground "#EEC591"
+			     ))))
+ '(org-level-3 ((t (:inherit outline-3 :height 1.05 :family "Maple Mono"))))
  '(org-level-4 ((t (:inherit outline-4 :height 1.1  :family "Maple Mono"))))
  '(org-level-5 ((t (:inherit outline-5 :height 1.05 :family "Maple Mono"))))
  ;;'(org-level-6 ((t (,@headline ,@variable-tuple))))
@@ -80,7 +89,6 @@
  ;;'(org-level-8 ((t (,@headline ,@variable-tuple))))
 
  '(org-document-title ((t (,@headline ,@variable-tuple :height 2.0 :underline nil)))))
-
 
 
 
