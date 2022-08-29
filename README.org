@@ -253,14 +253,24 @@ M-x align-regex
 * 文件结构
 .demacs.d
 ├── lisp
-│   ├──[[~/.emacs.d/lisp/init-options.el][init-options.el]]
-│   ├──[[~/.emacs.d/lisp/core-keymap.el][core-keymap.el]]
-│   ├──[[~/.emacs.d/lisp/init-elpa.el][init-elpa.el]]
-│   ├──[[~/.emacs.d/lisp/init-evil.el][init-evil.el]]
-│   ├──[[~/.emacs.d/lisp/init-function.el][init-function.el]]
-│   ├──[[~/.emacs.d/lisp/init-packages.el][init-packages.el]]
-│   ├──[[~/.emacs.d/lisp/init-startup.el][init-startup.el]]
-│   ├──[[~/.emacs.d/lisp/init-system.el][init-system.el]]
-│   └──[[~/.emacs.d/lisp/init-ui.el][init-ui.el]]
+│   ├── [[~/.emacs.d/lisp/init-options.el][init-options.el]]
+│   ├── [[~/.emacs.d/lisp/core-keymap.el][core-keymap.el]]
+│   ├── [[~/.emacs.d/lisp/init-elpa.el][init-elpa.el]]
+│   ├── [[~/.emacs.d/lisp/init-evil.el][init-evil.el]]
+│   ├── [[~/.emacs.d/lisp/init-function.el][init-function.el]]
+│   ├── [[~/.emacs.d/lisp/init-packages.el][init-packages.el]]
+│   ├── [[~/.emacs.d/lisp/init-startup.el][init-startup.el]]
+│   ├── [[~/.emacs.d/lisp/init-system.el][init-system.el]]
+│   └── [[~/.emacs.d/lisp/init-ui.el][init-ui.el]]
 └── [[~/.emacs.d/init.el][init.el]]
+
+
+
+
+
+
+
+
+
+
 
