@@ -613,6 +613,18 @@
   (markdown-enable-math                  t)
   (markdown-fontify-code-blocks-natively t))
 
+(use-package highlight-indent-guides
+  :hook (prog-mode . highlight-indent-guides-mode)
+  :custom
+  (highlight-indent-guides-method 'character)
+  (highlight-indentation-blank-lines t)
+  ; (highlight-indent-guides-auto-enabled nil)
+  :config
+  (set-face-background 'highlight-indent-guides-odd-face "color-233")
+  (set-face-background 'highlight-indent-guides-even-face "color-233")
+  (set-face-foreground 'highlight-indent-guides-character-face "color-233"))
+
+(add-hook 'python-mode-hook 'highlight-indent-guides-mode)
 
 (use-package lpy)
 (provide 'init-packages)

@@ -127,6 +127,7 @@
 ;; remap ;;
 ;;;;;;;;;;;
 (evil-define-key 'normal org-mode-map (kbd "RET") 'org-open-at-point)
+
 (evil-define-key 'normal org-mode-map (kbd "M-j") 'org-metadown)
 (evil-define-key 'normal org-mode-map (kbd "M-k") 'org-metaup)
 
