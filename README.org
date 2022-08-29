@@ -84,6 +84,16 @@ Iosevka SS04
 [[~/.emacs.d/lisp/init-packages.el][package]]
 [[~/.emacs.d/lisp/init-ui.el][font]]
 
+* default
+** window
+| key   | des               |
+| C-x 0 | only keep current |
+| C-x 1 | only keep current |
+| C-x 2 | Horizontal split  |
+| C-x 3 | vertical split    |
+| C-x o |                  |
+
+
 * Markdown mode
 - [[https://github.com/jrblevin/markdown-mode][jrblevin/markdown-mode]]
 ** Markdownmode keymap
@@ -126,7 +136,6 @@ Iosevka SS04
 
 
 
-   
 * Org Mode
 ** basic
 #+begin_src emacs-lisp
