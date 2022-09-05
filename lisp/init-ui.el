@@ -11,6 +11,9 @@
 ;set fontsize
 ;(set-face-attribute 'default nil :height 170)
 
+; dashboard
+(setq fancy-splash-image centaur-logo)
+
 ; ┌──────────────┐
 ; │ markdon font │
 ; └──────────────┘
@@ -24,6 +27,8 @@
 
 ;(set-frame-font emacs-english-font emacs-cjk-font '(20 . 12))
 
+;; Logo
+(setq fancy-splash-image centaur-logo)
 
 
 (defun set-font(english chinese english-size chinese-size)

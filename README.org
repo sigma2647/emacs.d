@@ -18,24 +18,29 @@ https://sourcegraph.com/search?q=context:global+repo:%5Egithub%5C.com/seagle0128
 https://github.com/seagle0128/.emacs.d
 [[https://github.com/seagle0128/.emacs.d][todo_config]]
 
-- [ ] 历史命令
+- [X] 历史命令
 - [ ] lsp
 - [ ] cmp补全
 - [ ] 内置输入法
-- [ ] org-tree
+- [X] org-tree
 - [ ] markdown mode
 - [ ] enter goto link
 - [ ] org_indent
 - [ ] emacs
 - [ ] math-mode
-- [ ] 搜索
 - [ ] magit
+- [ ] 搜索
 - [ ] python-shell-send-block
 - [ ] python-shell-send-region
 - [X] indent line
 - [X] install org-babel-execute
 - [ ] hydra
-- [X] last positon
+- [ ] last positon
+- [ ] chinese font
+- [ ] font size [[file:lisp/init-ui.el][init-ui]]
+- [ ] shell
+  
+  
   
 
 

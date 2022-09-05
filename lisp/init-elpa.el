@@ -1,42 +1,3 @@
-;
-;
-;
-;      
-; ;;; settings for package archives
-; (require 'package)
-; (setq package-check-signature nil
-;       load-prefer-newer t)
-;
-;
-; (setq package-archives '(;("melpa" . "https://melpa.org/packages/")
-;                           ("melpa" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/melpa/")
-;                           ("org" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/org/")
-;                           ("gnu" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/gnu/")))
-;                           ; ("elpa" . "https://elpa.gnu.org/packages/")))
-;
-;
-; ;;; initialize the packages, avoiding a re-initialization
-; (unless (bound-and-true-p package--initialized) ;; To avoid warnings on 27
-;   (package-initialize))
-;
-; (unless package-archive-contents
-;   (package-refresh-contents))
-;
-; ;; settings for use-package package
-; (unless (package-installed-p 'use-package)
-;   (package-refresh-contents)
-;   (package-install 'use-package))
-;
-;
-;
-; (provide 'init-elpa)
-;
-; ;; Local Variables:
-; ;; byte-compile-warnings: (not free-vars unresolved)
-; ;; End:
-; ;;; init-elpa.el ends here
-
-
 ; ┌─────────┐
 ; │ PACKAGE │
 ; └─────────┘
@@ -44,11 +5,18 @@
 
 (require 'package)
 
-(setq package-archives '(;("melpa" . "https://melpa.org/packages/")
+(setq package-archives '(
+                         ;("melpa" . "https://melpa.org/packages/")
                          ("melpa" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/melpa/")
                          ("org" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/org/")
-                         ("gnu" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/gnu/")))
+                         ("gnu" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/gnu/"))
                          ; ("elpa" . "https://elpa.gnu.org/packages/")))
+
+                         ; 163 国内源
+                         ; ("melpa" . "https://melpa.org/packages/")
+                         ; ("melpa-stable" . "https://stable.melpa.org/packages/")
+
+)
 
 
 (package-initialize)

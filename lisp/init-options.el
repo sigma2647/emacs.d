@@ -6,7 +6,7 @@
 (add-to-list 'default-frame-alist '(menu-bar-lines . 0))
 (add-to-list 'default-frame-alist '(vertical-scroll-bars))
 
-(set-background-color "chocolate3")
+; (set-background-color "chocolate3")
 ;; This makes the Aqua titlebar color the same as Emacs.
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 
