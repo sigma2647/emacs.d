@@ -37,7 +37,7 @@
    ; (setq dashboard-startup-banner
    ; 	  (when (display-graphic-p) "~/.emacs.d/dashboard/eva.png"))
 
-   dashboard-startup-banner (or centaur-logo 'official)
+   (setq dashboard-startup-banner (or centaur-logo 'official))
 
 
    (setq dashboard-banner-logo-title "HI Emacs")

@@ -3,6 +3,7 @@
 ; └─────────┘
 
 
+; 设置logo
 (defcustom centaur-logo (expand-file-name
                          (if (display-graphic-p) "~/.emacs.d/dashboard/eva.png" "banner.txt")
                          user-emacs-directory)

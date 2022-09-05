@@ -10,6 +10,7 @@ centaur-logo
 
   (setq dashboard-banner-logo-title "CENTAUR EMACS - Enjoy Programming & Writing"
           dashboard-startup-banner (or centaur-logo 'official)
+
 #+end_src
 
 
@@ -37,7 +38,7 @@ https://github.com/seagle0128/.emacs.d
 - [ ] hydra
 - [ ] last positon
 - [ ] chinese font
-- [ ] font size [[file:lisp/init-ui.el][init-ui]]
+- [ ] font size [[file:lisp/init-ui.el][init-ui]] 字体大小YYDS
 - [ ] shell
   
   

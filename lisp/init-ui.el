@@ -14,6 +14,7 @@
 ; dashboard
 (setq fancy-splash-image centaur-logo)
 
+
 ; ┌──────────────┐
 ; │ markdon font │
 ; └──────────────┘

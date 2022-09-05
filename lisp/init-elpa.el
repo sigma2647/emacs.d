@@ -9,14 +9,16 @@
                          ;("melpa" . "https://melpa.org/packages/")
                          ("melpa" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/melpa/")
                          ("org" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/org/")
-                         ("gnu" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/gnu/"))
+                         ("gnu" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/gnu/")
+
                          ; ("elpa" . "https://elpa.gnu.org/packages/")))
 
                          ; 163 国内源
                          ; ("melpa" . "https://melpa.org/packages/")
                          ; ("melpa-stable" . "https://stable.melpa.org/packages/")
-
-)
+                         ; ("melpa" . "https://mirrors.163.com/elpa/melpa/")
+                         ; ("melpa-stable" . "https://mirrors.163.com/elpa/stable-melpa/"))))
+))
 
 
 (package-initialize)
