@@ -23,7 +23,7 @@
 
 
 
-(set-frame-font "JetBrains Mono" nil t)
+;; (set-frame-font "JetBrains Mono" nil t)
 
 
 ;(set-frame-font emacs-english-font emacs-cjk-font '(20 . 12))
@@ -33,10 +33,10 @@
 
 
 (defun set-font(english chinese english-size chinese-size)
- ;; English
- (set-face-attribute
-  'default nil :font
-  (format "%s:pixelsize=%d"  english english-size))
+  ;; English
+  (set-face-attribute
+   'default nil :font
+   (format "%s:pixelsize=%d"  english english-size))
 
  (dolist (charset '( han symbol cjk-misc bopomofo))
 
@@ -45,10 +45,8 @@
     (frame-parameter nil 'font) charset
     (font-spec :family chinese :size chinese-size))))
 
-;; (set-font "Maple Mono" "Sarasa Mono SC Nerd" 14 14)
+(set-font "JetBrains Mono" "Maple Mono" 14 14)
 ;; (set-font "Maple Mono" "Microsoft YaHei Mono" 14 14)
-;; (set-font "Maple Mono" "Microsoft YaHei Mono" 14 14)
-;; (set-font "MesloLGL Nerd Font Mono" "Sarasa Mono SC Nerd" 14 14)
 
 
 
