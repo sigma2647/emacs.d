@@ -20,7 +20,7 @@
 (require 'init-startup)
 (require 'init-elpa)
 (require 'init-dashboard)
-;; (require 'init-packages)
+(require 'init-packages)
 (require 'init-ui)
 (require 'init-evil)
 (require 'init-function)
