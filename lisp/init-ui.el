@@ -2,10 +2,11 @@
 ; │ Theme │
 ; └───────┘
 
+(require 'init-function)
+
 ;; (custom-set-variables
 ;;  '(custom-safe-themes
 ;;    '("1436985fac77baf06193993d88fa7d6b358ad7d600c1e52d12e64a2f07f07176" default)))
-
 
 
 ;set fontsize
@@ -32,42 +33,12 @@
 (setq fancy-splash-image centaur-logo)
 
 
-;; (defun set-font(english chinese english-size chinese-size)
-;;  ;; English
-;;  (set-face-attribute
-;;   'default nil :font
-;;   (format "%s:pixelsize=%d"  english english-size))
 
-;;  (dolist (charset '( han symbol cjk-misc bopomofo))
-
-;;  ;; Chinese
-;;    (set-fontset-font
-;;     (frame-parameter nil 'font) charset
-;;     (font-spec :family chinese :size chinese-size))))
-
-
-
-(defun set-font-en(english font-size)
-  ;; English
-  (set-face-attribute
-   'default nil :font
-   (format "%s:pixelsize=%d"  english font-size))
-
- )
-
-(defun set-font-zh(chinese font-size)
-  (dolist (charset '( han symbol cjk-misc bopomofo))
- ;; Chinese
-   (set-fontset-font
-    (frame-parameter nil 'font) charset
-    (font-spec :family chinese :size font-size))))
 
 ;; (set-font-en "Maple Mono" 15)
 (set-font-en "JetBrains Mono" 15)
 (set-font-zh "Microsoft YaHei Mono" 15)
 
-;; (set-font-zh "JetBrains Mono" "Maple Mono" 14 14)
-;; (set-font "Maple Mono" "Microsoft YaHei Mono" 14 14)
 
 
 
