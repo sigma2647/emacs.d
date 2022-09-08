@@ -62,7 +62,8 @@
     (frame-parameter nil 'font) charset
     (font-spec :family chinese :size font-size))))
 
-(set-font-en "Maple Mono" 15)
+;; (set-font-en "Maple Mono" 15)
+(set-font-en "JetBrains Mono" 15)
 (set-font-zh "Microsoft YaHei Mono" 15)
 
 ;; (set-font-zh "JetBrains Mono" "Maple Mono" 14 14)

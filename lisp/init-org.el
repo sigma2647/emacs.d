@@ -19,6 +19,25 @@
     :custom
     (org-bullets-bullet-list '("◉" "☯" "○" "☯" "✸" "☯" "✿" "☯" "✜" "☯" "◆" "☯" "▶")))
 
+(setq org-startup-indented t
+      org-bullets-bullet-list '(" ")
+      ;; org-ellipsis "  "
+      org-pretty-entities t
+      org-hide-emphasis-markers t
+
+      org-agenda-block-separator ""
+      org-fontify-whole-heading-line t
+      org-fontify-done-headline t
+      org-fontify-quote-and-verse-blocks t)
+
+
+
+(lambda () (progn
+             (setq left-margin-width 2)
+             (setq right-margin-width 2)
+             (set-window-buffer nil (current-buffer))))
+
+
 
 ; Replace list hyphen with dot
 (font-lock-add-keywords 'org-mode
@@ -50,7 +69,8 @@
      '(org-table			((t (:inherit fixed-pitch :foreground "#83a598" :family "Microsoft YaHei Mono"))))
      ;; '(org-document-info		((t (:foreground "dark orange"))))
      ;; '(org-document-info-keyword	((t (:inherit (shadow fixed-pitch)))))
-     '(org-indent			((t (:inherit (org-hide fixed-pitch)))))
+     ;; '(org-indent			((t (:inherit (org-hide fixed-pitch)))))
+     '(org-indent			((t (:family "Maple Mono"))))
      '(org-link				((t (:underline t))))
 
      ;;;;;;;;;;;;;
@@ -64,7 +84,7 @@
      '(org-level-3			((t (,@headline ,@variable-tuple :height 1.25))))
      '(org-level-2			((t (,@headline ,@variable-tuple :height 1.5))))
      '(org-level-1			((t (,@headline ,@variable-tuple :height 1.75))))
-     '(org-document-title		((t (,@headline ,@variable-tuple :height 2.0 :underline nil))))))
+     '(org-document-title		((t (:height 2.0 :underline nil :foreground "#83a598" ))))))
 
 
 ;; (custom-set-faces
