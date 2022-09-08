@@ -72,6 +72,7 @@
 ;; 不显示行号
 (dolist (mode '(org-mode-hook
                 shell-mode-hook
+                eshell-mode-hook
 		treemacs-mode-hook
                 markdown-mode-hook
                 ))

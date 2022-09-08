@@ -61,6 +61,10 @@ https://github.com/seagle0128/.emacs.d
 #+begin_src bash
   git clone git@github.com:sigma2647/emacs.d.git  ~/.emacs.d
 #+end_src
+
+#+RESULTS:
+
+
 * font
 | Mode | Font                      |
 |------+---------------------------|
@@ -94,52 +98,53 @@ Iosevka SS04
 * default
 ** window
 | key   | des               |
+|-------+-------------------|
 | C-x 0 | only keep current |
 | C-x 1 | only keep current |
 | C-x 2 | Horizontal split  |
 | C-x 3 | vertical split    |
-| C-x o |                  |
+| C-x o |                   |
 
 
 * Markdown mode
 - [[https://github.com/jrblevin/markdown-mode][jrblevin/markdown-mode]]
 ** Markdownmode keymap
 
-| C-c C-s C-h | help         |
-| C-c C-s b   | bold         |
-| C-c C-i     | insert link  |
-| C-c C-s h   | heading      |
-| C-c C-s c   | inline block |
-|             |              |
-
-| C-c C-s ! | markdown-insert-header-setext-1    |
-| C-c C-s - | markdown-insert-hr                 |
-| C-c C-s 1 | markdown-insert-header-atx-1       |
-| C-c C-s 2 | markdown-insert-header-atx-2       |
-| C-c C-s 3 | markdown-insert-header-atx-3       |
-| C-c C-s 4 | markdown-insert-header-atx-4       |
-| C-c C-s 5 | markdown-insert-header-atx-5       |
-| C-c C-s 6 | markdown-insert-header-atx-6       |
-| C-c C-s @ | markdown-insert-header-setext-2    |
-| C-c C-s C | markdown-insert-gfm-code-block     |
-| C-c C-s F | markdown-insert-foldable-block     |
-| C-c C-s H | markdown-insert-header-setext-dwim |
-| C-c C-s P | markdown-pre-region                |
-| C-c C-s Q | markdown-blockquote-region         |
-| C-c C-s [ | markdown-insert-gfm-checkbox       |
-| C-c C-s b | markdown-insert-bold               |
-| C-c C-s c | markdown-insert-code               |
-| C-c C-s e | markdown-insert-italic             |
-| C-c C-s f | markdown-insert-footnote           |
-| C-c C-s h | markdown-insert-header-dwim        |
-| C-c C-s i | markdown-insert-italic             |
-| C-c C-s k | markdown-insert-kbd                |
-| C-c C-s l | markdown-insert-link               |
-| C-c C-s p | markdown-insert-pre                |
-| C-c C-s q | markdown-insert-blockquote         |
-| C-c C-s s | markdown-insert-strike-through     |
-| C-c C-s t | markdown-insert-table              |
-| C-c C-s w | markdown-insert-wiki-link          |
+| key         | des                                |
+|-------------+------------------------------------|
+| C-c C-s C-h | help                               |
+| C-c C-s b   | bold                               |
+| C-c C-i     | insert link                        |
+| C-c C-s h   | heading                            |
+| C-c C-s c   | inline block                       |
+| C-c C-s !   | markdown-insert-header-setext-1    |
+| C-c C-s -   | markdown-insert-hr                 |
+| C-c C-s 1   | markdown-insert-header-atx-1       |
+| C-c C-s 2   | markdown-insert-header-atx-2       |
+| C-c C-s 3   | markdown-insert-header-atx-3       |
+| C-c C-s 4   | markdown-insert-header-atx-4       |
+| C-c C-s 5   | markdown-insert-header-atx-5       |
+| C-c C-s 6   | markdown-insert-header-atx-6       |
+| C-c C-s @   | markdown-insert-header-setext-2    |
+| C-c C-s C   | markdown-insert-gfm-code-block     |
+| C-c C-s F   | markdown-insert-foldable-block     |
+| C-c C-s H   | markdown-insert-header-setext-dwim |
+| C-c C-s P   | markdown-pre-region                |
+| C-c C-s Q   | markdown-blockquote-region         |
+| C-c C-s [   | markdown-insert-gfm-checkbox       |
+| C-c C-s b   | markdown-insert-bold               |
+| C-c C-s c   | markdown-insert-code               |
+| C-c C-s e   | markdown-insert-italic             |
+| C-c C-s f   | markdown-insert-footnote           |
+| C-c C-s h   | markdown-insert-header-dwim        |
+| C-c C-s i   | markdown-insert-italic             |
+| C-c C-s k   | markdown-insert-kbd                |
+| C-c C-s l   | markdown-insert-link               |
+| C-c C-s p   | markdown-insert-pre                |
+| C-c C-s q   | markdown-insert-blockquote         |
+| C-c C-s s   | markdown-insert-strike-through     |
+| C-c C-s t   | markdown-insert-table              |
+| C-c C-s w   | markdown-insert-wiki-link          |
 
 
 
