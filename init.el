@@ -25,6 +25,7 @@
 (require 'init-evil)
 (require 'init-function)
 (require 'init-markdown)
+(require 'init-org)
 (require 'core-keymap)
 
 

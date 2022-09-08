@@ -107,26 +107,6 @@
 ;;   ([remap describe-key] . helpful-key))
 
 ;
-(defun efs/org-mode-setup ()
-  (org-indent-mode))
-  ; (variable-pitch-mode 1)
-  ; (visual-line-mode 1))
-
-(use-package org
-  :pin org
-  :hook (org-mode . efs/org-mode-setup)
-  :config
-  (setq org-ellipsis " ▾"))
-  ;; :bind(:map org-mode-map
-  ;; 	   ("<M-up>"	 . nil)
-  ;; 	   ("<M-down>"	 . nil))
-  ;; (setq org-startup-indented t))
-
-(use-package org-bullets
-    :after org
-    :hook (org-mode . org-bullets-mode)
-    :custom
-    (org-bullets-bullet-list '("◉" "☯" "○" "☯" "✸" "☯" "✿" "☯" "✜" "☯" "◆" "☯" "▶")))
 
 ; (dolist (face '((org-level-1 . 1.2)
 ;                   (org-level-2 . 1.1)
