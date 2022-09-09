@@ -1,3 +1,5 @@
+(require 'init-function)
+
 (use-package general
   :config
   (general-create-definer rune/leader-keys
@@ -126,12 +128,13 @@
 ;;;;;;;;;;;
 ;; remap ;;
 ;;;;;;;;;;;
-(evil-define-key 'normal org-mode-map (kbd "RET") 'org-open-at-point)
+; (evil-define-key 'normal org-mode-map (kbd "RET") 'org-open-at-point)
+(evil-define-key 'normal org-mode-map (kbd "RET") #'+org/dwim-at-point)
 
 (evil-define-key 'normal org-mode-map (kbd "M-j") 'org-metadown)
 (evil-define-key 'normal org-mode-map (kbd "M-k") 'org-metaup)
 
-(evil-define-key 'normal markdown-mode-map (kbd "RET") 'markdown-follow-thing-at-point)
+;; (evil-define-key 'normal markdown-mode-map (kbd "RET") 'markdown-follow-thing-at-point)
 
 ;; (evil-define-key 'visual org-mode-map (kbd "}") 'evil-forward-paragraph)
 ;; (evil-define-key 'visual org-mode-map (kbd "{") 'evil-backward-paragraph)
