@@ -1,3 +1,5 @@
+
+(require 'init-function)
 ;; Window configuration
 (setq frame-inhibit-implied-resize t) ;; Supposed to hasten startup
 
@@ -13,14 +15,13 @@
 ; ┌────┐
 ; │ Ui │
 ; └────┘
-(defun guiconfig ()
-  (if (display-graphic-p)
-      (progn
-	(menu-bar-mode -1)	;disable menu bar
-	(tool-bar-mode -1)	;disable tool bar
-	(scroll-bar-mode -1))))
 
 (guiconfig)
+(setq dnd-protocol-alist
+      '(("" . your-dnd-handler)))
+
+
+(global-hl-line-mode 1)
 
 (setq inhibit-startup-message t
       visible-bell nil)   ; 忽略启动消息
