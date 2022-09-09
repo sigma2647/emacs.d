@@ -555,19 +555,6 @@
 ; (require 'eaf)
 ; (require 'eaf-pdf-viewer)
 
-(use-package markdown-mode
-  :ensure t
-  :mode ("README\\.md\\'" . gfm-mode)
-  :hook (markdown-mode . visual-line-mode)
-  :init (setq markdown-command "multimarkdown")
-  :custom
-  (markdown-header-scaling               t)
-  (markdown-enable-wiki-links            t)
-  (markdown-italic-underscore            t)
-  (markdown-asymmetric-header            t)
-  (markdown-gfm-uppercase-checkbox       t)
-  (markdown-enable-math                  t)
-  (markdown-fontify-code-blocks-natively t))
 
 (use-package highlight-indent-guides
   :hook (prog-mode . highlight-indent-guides-mode)
