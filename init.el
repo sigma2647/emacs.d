@@ -27,6 +27,7 @@
 (require 'init-markdown)
 (require 'init-org)
 (require 'core-keymap)
+(require 'init-py)
 
 
 
