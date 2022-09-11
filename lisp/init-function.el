@@ -41,6 +41,7 @@ If FRAME is omitted or nil, use currently selected frame."
       (insert (concat "[[file+sys:"  (substring (decode-coding-string (url-unhex-string url) 'utf-8) 5 nil)"]]"))
     (dired (substring (decode-coding-string (url-unhex-string url) 'utf-8) 5 nil))
     ))
+
 (defun +org/dwim-at-point ()
   "Do-what-I-mean at point.
 If on a:
@@ -135,6 +136,7 @@ If on a:
          (org-toggle-checkbox (if (equal match "[ ]") '(16)))))
 
       (_ (+org--refresh-inline-images-in-subtree)))))
+
 ;;;###autoload
 (defun +rest/dwim-at-point ()
   "TODO"

@@ -134,6 +134,21 @@
 (evil-define-key 'normal org-mode-map (kbd "M-j") 'org-metadown)
 (evil-define-key 'normal org-mode-map (kbd "M-k") 'org-metaup)
 
+
+(evil-define-key 'normal markdown-mode-map (kbd "M-<up>")  'markdown-table-move-row-up)
+(evil-define-key 'normal markdown-mode-map (kbd "M-<down>")  'markdown-table-move-row-down)
+(evil-define-key 'normal markdown-mode-map (kbd "M-<left>")  'markdown-table-move-column-left)
+(evil-define-key 'normal markdown-mode-map (kbd "M-<right>") 'markdown-table-move-column-right)
+
+;; how to dect
+(evil-define-key 'normal markdown-mode-map (kbd "M-k")  'markdown-table-move-row-up)
+(evil-define-key 'normal markdown-mode-map (kbd "M-j")  'markdown-table-move-row-down)
+(evil-define-key 'normal markdown-mode-map (kbd "M-h")  'markdown-table-move-column-left)
+(evil-define-key 'normal markdown-mode-map (kbd "M-l") 'markdown-table-move-column-right)
+
+(evil-define-key 'normal markdown-mode-map (kbd "s-k") 'markdown-insert-link)
+(evil-define-key 'insert markdown-mode-map (kbd "s-k") 'markdown-insert-link)
+
 ;; (evil-define-key 'normal markdown-mode-map (kbd "RET") 'markdown-follow-thing-at-point)
 
 ;; (evil-define-key 'visual org-mode-map (kbd "}") 'evil-forward-paragraph)

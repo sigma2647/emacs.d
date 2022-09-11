@@ -554,6 +554,9 @@
 ; (require 'eaf-browser)
 ; (require 'eaf)
 ; (require 'eaf-pdf-viewer)
+(use-package valign)
+(add-hook 'org-mode-hook #'valign-mode)
+(setq valign-fancy-bar t)
 
 
 (use-package highlight-indent-guides
@@ -572,6 +575,6 @@
 (use-package lpy)
 ;; (use-package )
 
-(provide 'init-packages)
 
+(provide 'init-packages)
 

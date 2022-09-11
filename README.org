@@ -251,6 +251,7 @@ Iosevka SS04
     (require 'dap-python))
 #+end_src
 
+
 * Tips
 [[https://www.emacswiki.org/emacs/%e7%b6%b2%e7%ab%99%e5%9c%b0%e5%9c%96][emacswiki]]
 M-x align-regex
@@ -285,4 +286,15 @@ M-x align-regex
 
 
 
+
+
+
+
+
+* emacs command
+
+| command             |
+|---------------------|
+| org-export-dispatch |
+|                     |
 
