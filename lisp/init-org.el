@@ -10,11 +10,11 @@
   ;; 	   ("<M-down>"	 . nil))
   ;; (setq org-startup-indented t))
 
-;; (use-package org-bullets
-;;     :after org
-;;     :hook (org-mode . org-bullets-mode)
-;;     :custom
-;;     (org-bullets-bullet-list '("◉" "☯" "○" "☯" "✸" "☯" "✿" "☯" "✜" "☯" "◆" "☯" "▶")))
+(use-package org-bullets
+    :after org
+    :hook (org-mode . org-bullets-mode)
+    :custom
+    (org-bullets-bullet-list '("◉" "☯" "○" "☯" "✸" "☯" "✿" "☯" "✜" "☯" "◆" "☯" "▶")))
 
 ;; (defun me-org-mode-remove-stars ()
 ;;   (font-lock-add-keywords

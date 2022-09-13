@@ -556,6 +556,7 @@
 ; (require 'eaf-pdf-viewer)
 (use-package valign)
 (add-hook 'org-mode-hook #'valign-mode)
+(add-hook 'markdown-mode-hook #'valign-mode)
 (setq valign-fancy-bar t)
 
 
