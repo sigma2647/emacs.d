@@ -50,11 +50,15 @@
   )
 )
 
+(use-package undo-fu)
 
 (use-package evil
+  :demand t
+  :bind (("<escape>" . keyboard-escape-quit))
   :init
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
+  (setq evil-undo-system 'undo-fu)
   (setq evil-want-C-u-scroll t)
   (setq evil-want-C-i-jump t)
   :config
@@ -77,6 +81,7 @@
 (use-package evil-collection
   :after evil
   :config
+  (setq evil-want-integration t)
   (evil-collection-init))
 
 
@@ -88,7 +93,6 @@
   ("j" text-scale-increase "in")
   ("k" text-scale-decrease "out")
   ("f" nil "finished" :exit t))
-
 
 
 (rune/leader-keys
@@ -128,25 +132,29 @@
 ;;;;;;;;;;;
 ;; remap ;;
 ;;;;;;;;;;;
-; (evil-define-key 'normal org-mode-map (kbd "RET") 'org-open-at-point)
-(evil-define-key 'normal org-mode-map (kbd "RET") #'+org/dwim-at-point)
+(evil-define-key 'normal org-mode-map
+  (kbd "RET") #'+org/dwim-at-point
+  (kbd "M-j") 'org-metadown
+  ;; (kbd "RET") 'org-open-at-point
+  (kbd "M-k") 'org-metaup)
 
-(evil-define-key 'normal org-mode-map (kbd "M-j") 'org-metadown)
-(evil-define-key 'normal org-mode-map (kbd "M-k") 'org-metaup)
 
-
-(evil-define-key 'normal markdown-mode-map (kbd "M-<up>")  'markdown-table-move-row-up)
-(evil-define-key 'normal markdown-mode-map (kbd "M-<down>")  'markdown-table-move-row-down)
-(evil-define-key 'normal markdown-mode-map (kbd "M-<left>")  'markdown-table-move-column-left)
-(evil-define-key 'normal markdown-mode-map (kbd "M-<right>") 'markdown-table-move-column-right)
+(evil-define-key 'normal markdown-mode-map
+  (kbd "M-<up>")  'markdown-table-move-row-up
+  (kbd "M-<down>")  'markdown-table-move-row-down
+  (kbd "M-<left>")  'markdown-table-move-column-left
+  (kbd "M-<right>") 'markdown-table-move-column-right)
 
 ;; how to dect
-(evil-define-key 'normal markdown-mode-map (kbd "M-k")  'markdown-table-move-row-up)
-(evil-define-key 'normal markdown-mode-map (kbd "M-j")  'markdown-table-move-row-down)
-(evil-define-key 'normal markdown-mode-map (kbd "M-h")  'markdown-table-move-column-left)
-(evil-define-key 'normal markdown-mode-map (kbd "M-l") 'markdown-table-move-column-right)
+(evil-define-key 'normal markdown-mode-map
+  (kbd "M-k") 'markdown-table-move-row-up
+  (kbd "M-j") 'markdown-table-move-row-down
+  (kbd "M-h") 'markdown-table-move-column-left
+  (kbd "M-l") 'markdown-table-move-column-right
+  (kbd "s-k") 'markdown-insert-link
+  (kbd "gj") 'org-forward-heading-same-level
+  (kbd "gk") 'org-backward-heading-same-level)
 
-(evil-define-key 'normal markdown-mode-map (kbd "s-k") 'markdown-insert-link)
 (evil-define-key 'insert markdown-mode-map (kbd "s-k") 'markdown-insert-link)
 
 ;; (evil-define-key 'normal markdown-mode-map (kbd "RET") 'markdown-follow-thing-at-point)
@@ -163,11 +171,9 @@
 ;; modifier-cache
 ;;   ((0 . evil-ex-yank))
 
-;; ;(define-key evil-normal-state-map (kbd "Y") 'evil-ex-yank evil-end-of-line)
 
 
-
-
+;; (define-key evil-normal-state-map (kbd "Y") 'evil-ex-yank '$)
 
 
 ;;;;;;;;;;;;;;;;;;;;

@@ -575,6 +575,7 @@
 
 (use-package lpy)
 ;; (use-package )
+(use-package nano-modeline)
 
 
 (provide 'init-packages)

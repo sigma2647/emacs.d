@@ -186,5 +186,19 @@ If on a:
 ;; cmd-c
 ;; check clip
 
+
+(defun me-org-mode-remove-stars ()
+  (font-lock-add-keywords
+   nil
+   '(("^\\*+ "
+      (0
+       (prog1 nil
+         (put-text-property (match-beginning 0) (match-end 0)
+                            'invisible t)))))))
+
+; (add-hook 'org-mode-hook #'me-org-mode-remove-stars)
+;; 您只需将变量org-hide-leading-stars设置为t，然后它将隐藏标题中的所有前导星号。您甚至可以使用org-mode指令为特定文件启用或禁用它。有关更多详细信息，请参阅内置文档(C-h v  org-hide-leading-stars)和info pages。(我个人使用它)
+;; 附注:还有另一种方法可以做到这一点--通过org-ident-mode，但我还没有尝试过。
+
 (provide 'init-function)
 

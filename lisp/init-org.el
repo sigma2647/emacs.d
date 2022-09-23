@@ -1,5 +1,6 @@
 (require 'init-function)
 
+(setq org-hide-leading-stars t)
 (use-package org
   :pin org
   :hook (org-mode . efs/org-mode-setup)
@@ -16,7 +17,7 @@
     :custom
     (org-bullets-bullet-list '("◉" "☯" "○" "☯" "✸" "☯" "✿" "☯" "✜" "☯" "◆" "☯" "▶")))
 
-;; (defun me-org-mode-remove-stars ()
+;; ;; (defun me-org-mode-remove-stars ()
 ;;   (font-lock-add-keywords
 ;;    nil
 ;;    '(("^\\*+ "
