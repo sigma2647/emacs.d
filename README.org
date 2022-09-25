@@ -166,15 +166,16 @@ Iosevka SS04
 | ⌃ | Ctrl    |       |
 
 *** c-c
-| key         | command                |
-|-------------+------------------------|
-| C-enter     | create same level link |
-| C-c C-p     | run-python             |
-| C-c C-l     | Insert Line            |
-| C-c l gg    | lsp-find-definition    |
-| S-right     | toggle TODO            |
-| C-c '       | org-edit-special       |
-| C-c c-x c-l | latex preview          |
+| key         | command                | org       |
+|-------------+------------------------+-----------|
+| s-M-CR      |                        | todo list |
+| C-enter     | create same level link |           |
+| C-c C-p     | run-python             |           |
+| C-c C-l     | Insert Line            |           |
+| C-c l gg    | lsp-find-definition    |           |
+| S-right     | toggle TODO            |           |
+| C-c '       | org-edit-special       |           |
+| C-c c-x c-l | latex preview          |           |
 
 *** C-h
 | key   | command      |

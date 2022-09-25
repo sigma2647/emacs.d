@@ -162,6 +162,27 @@
 ;; 	:family "Maple Mono"
 ;; 	:foreground "#076678"
 ;; 	;; :foreground "#ffffff"
+
 ;; 		   )))))
+(add-hook 'org-mode-hook  (lambda ()
+                            (setq prettify-symbols-alist
+                                  '(("lambda" . ?λ)
+                                    (":PROPERTIES:" . ?)
+                                    (":ID:" . ?)
+                                    (":END:" . ?)
+                                    ("#+TITLE:" . ?)
+                                    ("#+AUTHOR:" . ?)
+                                    ("``` py" . ?🐍)
+                                    ("```" . ?)
+                                    ("#+END_QUOTE" . ?)
+                                    ("#+RESULTS:" . ?)
+                                    ("[ ]" . ?)
+                                    ("[-]" . ?)
+                                    ("[X]" . ?)
+                                    ("[#A]" . ?🅐)
+                                    ("[#B]" . ?🅑)
+                                    ("[#C]" . ?🅒)))
+                            (prettify-symbols-mode)))
+
 
 (provide 'init-org)
