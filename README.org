@@ -242,7 +242,7 @@ M-x align-regex
 [[https://www.libhunt.com][hi]]
 
 
-* 文件结构
+* file
 .demacs.d
 ├── lisp
 │   ├── [[~/.emacs.d/lisp/init-options.el][init-options.el]]

@@ -56,6 +56,7 @@
   :demand t
   :bind (("<escape>" . keyboard-escape-quit))
   :init
+  (setq evil-want-Y-yank-to-eol t)
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
   (setq evil-undo-system 'undo-fu)
@@ -138,6 +139,9 @@
   ;; (kbd "RET") 'org-open-at-point
   (kbd "M-k") 'org-metaup)
 
+(evil-define-key 'visual org-mode-map
+  (kbd "}") 'forward-paragraph
+  (kbd "{") 'backward-paragraph)
 
 (evil-define-key 'normal markdown-mode-map
   (kbd "M-<up>")  'markdown-table-move-row-up
