@@ -1,4 +1,3 @@
-
 (require 'init-function)
 ;; Window configuration
 (setq frame-inhibit-implied-resize t) ;; Supposed to hasten startup
@@ -11,6 +10,19 @@
 ; (set-background-color "chocolate3")
 ;; This makes the Aqua titlebar color the same as Emacs.
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+
+;; (defalias 'yes-or-no-p 'y-or-n-p)
+
+
+(fset 'yes-or-no-p 'y-or-n-p)
+
+
+(setq user-emacsdirectory "~/.emacs/var")
+(setq recentf-save-file   "~/.emacs.d/var/recentf")
+; 设置书签文件路径
+
+;关闭备份
+(setq make-backup-files nil auto-save-default nil)
 
 ; ┌────┐
 ; │ Ui │

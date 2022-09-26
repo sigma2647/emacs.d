@@ -164,6 +164,7 @@
 ;; 	;; :foreground "#ffffff"
 
 ;; 		   )))))
+
 (add-hook 'org-mode-hook  (lambda ()
                             (setq prettify-symbols-alist
                                   '(("lambda" . ?λ)

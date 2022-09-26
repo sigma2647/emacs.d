@@ -1,5 +1,3 @@
-(add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp/")))
-
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (setq custom-file (locate-user-emacs-file "custom.el"))
 
@@ -10,7 +8,6 @@
 ; ┌──────────┐
 ; │ 默认路径 │
 ; └──────────┘
-(setq default-directory "~/")
 
 
 
