@@ -7,7 +7,7 @@
   :diminish
   :init(which-key-mode)
   :bind (("C-s" . swiper)
-         :map ivy-minibuffer-map
+		 :map ivy-minibuffer-map
          ("TAB" . ivy-alt-done)
          ("C-l" . ivy-alt-done)
          ("C-j" . ivy-next-line)
@@ -38,6 +38,7 @@
   (ivy-prescient-mode +1))
 
 (use-package all-the-icons
+  :ensure t
   :if (display-graphic-p))
 
 (use-package doom-modeline
@@ -159,12 +160,17 @@
 
 ; (use-package org-tempo)
 
+;; (use-package lsp-mode
+;;   ;; :commands (lsp lsp-deferred)
+;;   :hook ('prog-mode . 'lsp-mode)
+;;   ;; :init
+;;   ;; (setq lsp-keymap-prefix "C-c l")
+;;   :config
+;;   (lsp-enable-which-key-integration t))
+
 (use-package lsp-mode
-  :commands (lsp lsp-deferred)
-  :init
-  (setq lsp-keymap-prefix "C-c l")
-  :config
-  (lsp-enable-which-key-integration t))
+  :ensure t
+  :hook ('prog-mode . 'lsp-mode))
 
 
 (use-package lsp-ui)
@@ -195,16 +201,22 @@
   (setq typescript-indent-level 2))
 
 (use-package company
- :after lsp-mode
- :hook (lsp-mode . company-mode)
- :bind (:map company-active-map
-        ("<tab>" . company-complete-selection))
-       (:map lsp-mode-map
-        ("<tab>" . company-indent-or-complete-common))
- :custom
- (company-minimum-prefix-length 1)
- (company-idle-delay 0.0))
-
+  ;; :after lsp-mode
+  :defer 2 ; 延迟启动
+  ;; :hook (lsp-mode . company-mode)
+  :hook (after-init . global-company-mode)
+  :init (setq company-tooltip-align-annotations t company-idle-delay 0 company-echo-delay 0
+              company-minimum-prefix-length 2 company-require-match nil company-dabbrev-ignore-case
+              nil company-dabbrev-downcase nil)
+  :bind
+  (:map company-active-map
+        ("C-n"    . #'company-select-next)
+        ("C-p"    . #'company-select-previous)
+        ("<tab>"  . #'company-complete-selection))
+  (:map lsp-mode-map
+        ("C-n"    . #'company-select-next)
+        ("C-p"    . #'company-select-previous)
+        ("<tab>"  . #'company-indent-or-complete-common)))
 
 
 (use-package gcmh
@@ -576,6 +588,17 @@
 (use-package lpy)
 ;; (use-package )
 (use-package nano-modeline)
+
+
+;; tmux
+;; (use-package perspeen
+;;   :ensure t
+;;   :init
+;;   (setq persqeen-use-tab t)
+;;   ;; (setq perspeen-keymap-prefix (kbd "`"))
+;;   (setq perspeen-keymap-prefix [C-tab])
+;;   :config
+;;   (perspeen-mode))
 
 
 (provide 'init-packages)

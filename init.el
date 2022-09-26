@@ -19,6 +19,7 @@
 (require 'init-dashboard)
 (require 'init-packages)
 (require 'init-ui)
+(require 'init-prog)
 (require 'init-evil)
 (require 'init-function)
 (require 'init-markdown)

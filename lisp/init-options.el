@@ -24,6 +24,13 @@
 ;关闭备份
 (setq make-backup-files nil auto-save-default nil)
 
+;; 让‘_‘被视为单词的一部分
+(add-hook 'after-change-major-mode-hook (lambda ()
+										  (modify-syntax-entry ?_ "w")))
+;; ‘-‘同上
+(add-hook 'after-change-major-mode-hook (lambda ()
+                                          (modify-syntax-entry ?- "w")))
+
 ; ┌────┐
 ; │ Ui │
 ; └────┘
@@ -36,10 +43,25 @@
 (global-hl-line-mode 1)
 
 (setq inhibit-startup-message t
-      visible-bell nil)   ; 忽略启动消息
+      visible-bell nil  ; 忽略启动消息
+      use-dialog-box nil) ; don't pop up ui dialogs
 
-(setq use-dialog-box nil) ; don't pop up ui dialogs
 (setq initial-scratch-message nil) ;
+
+; 关闭备份文件
+(setq make-backup-files nil auto-save-default nil)
+
+; 关闭锁文件
+(setq create-lockfiles nil)
+
+;; 高亮括号
+(show-paren-mode 1)
+
+;; 总是加载最新的文件
+(setq load-prefer-newer t)
+
+;; 关闭字体缓存gC
+(setq inhibit-compacting-font-caches nil)
 
 (global-auto-revert-mode 1)  ;auto refresh buffer content !!
 (setq global-auto-revert-non-file-buffers t)
@@ -48,11 +70,14 @@
 
 (require 'saveplace)
 (setq-default save-place t)
+(save-place-mode 1)
 
 (setq history-lenth 25)
 (savehist-mode 1)
 
-
+;; 设置制表符
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
 
 (setq ring-bell-function 'ignore)  ; 关闭声音
 
