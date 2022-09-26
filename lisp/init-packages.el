@@ -534,9 +534,18 @@
   :config (treemacs-set-scope-type 'Tabs))
 
 
-;; (require 'ivy-posframe)
-;; (use-package ivy-posframe)
-;; (ivy-posframe-mode 1)
+(use-package ivy-posframe
+  :ensure t
+  :init
+  (ivy-posframe-mode 1)
+  :custom
+  (ivy-posframe-parameters
+   '((left-fringe . 10)
+     (right-fringe . 10))
+   )
+
+  (ivy-posframe-display-functions-alist '((t . ivy-posframe-display-at-frame-top-center))))
+
 
 (use-package jupyter
     :defer t
