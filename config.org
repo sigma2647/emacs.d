@@ -214,3 +214,5 @@
 
 * TODO
 加什么呢
+[[https://manateelazycat.github.io/2022/11/07/how-i-use-emacs/][我平常是怎么使用 Emacs 的？]]
+lazy-load: 根据按键的配置文件动态生成 autoload 代码， 用户第一次按快捷键的时候, 再动态加载某个插件模块， 光通过这一项技术就可以把任意复杂的 Emacs 配置启动时间降低到 1 秒以下
