@@ -7,91 +7,125 @@
 :END:
 
 #+BEGIN_SRC emacs-lisp
-    ;;; early-init.el --- Emacs pre-initialization config -*- lexical-binding: t -*-
-    ;;; Commentary:
-
-    ;;; Code:
-
-  ;; 设置垃圾回收参数 hello
-    (setq gc-cons-threshold most-positive-fixnum)
-    (setq gc-cons-percentage 0.6)
-
-    ;; 启动早期不加载`package.el'包管理器
-    (setq package-enable-at-startup nil)
+;;; early-init.el --- Emacs pre-initialization config -*- lexical-binding: t -*-
+;;; Commentary:
 
 
-    ;; 不从包缓存中加载
-    (setq package-quickstart nil)
+;; 设置垃圾回收参数 hello
+(setq gc-cons-threshold most-positive-fixnum)
+(setq gc-cons-percentage 0.6)
 
-    ;; 禁止展示菜单栏、工具栏和纵向滚动条
-    (push '(menu-bar-lines . 0) default-frame-alist)
-    (push '(tool-bar-lines . 0) default-frame-alist)
-    (push '(vertical-scroll-bars) default-frame-alist)
-
-    ;; 禁止自动缩放窗口先
-    (setq frame-inhibit-implied-resize t)
-
-    ;; 禁止菜单栏、工具栏、滚动条模式，禁止启动屏幕和文件对话框
-    (menu-bar-mode -1)
-    (tool-bar-mode -1)
-    (scroll-bar-mode -1)
-    (setq inhibit-splash-screen t)
-    (setq use-file-dialog nil)
-
-    ;; 在这个阶段不编译
-    (setq comp-deferred-compilation nil)
+   ;; 启动早期不加载`package.el'包管理器
+   (setq package-enable-at-startup nil)
 
 
+   ;; 不从包缓存中加载
+   (setq package-quickstart nil)
 
-    (provide 'early-init)
-    ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    ;;; early-init.el ends here
+   ;; 禁止展示菜单栏、工具栏和纵向滚动条
+   (push '(menu-bar-lines . 0) default-frame-alist)
+   (push '(tool-bar-lines . 0) default-frame-alist)
+   (push '(vertical-scroll-bars) default-frame-alist)
+
+   ;; 禁止自动缩放窗口先
+   (setq frame-inhibit-implied-resize t)
+
+   ;; 禁止菜单栏、工具栏、滚动条模式，禁止启动屏幕和文件对话框
+   (menu-bar-mode -1)
+   (tool-bar-mode -1)
+   (scroll-bar-mode -1)
+   (setq inhibit-splash-screen t)
+   (setq use-file-dialog nil)
+
+   ;; 在这个阶段不编译
+   (setq comp-deferred-compilation nil)
+
+
+
+
+
+
+
+ ;; 调整垃圾收集阈值
+
+ (let ((normal-gc-cons-threshold (* 20 1024 1024))
+       (init-gc-cons-threshold (* 128 1024 1024)))
+   (setq gc-cons-threshold init-gc-cons-threshold)
+   (add-hook 'emacs-startup-hook
+             (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
+ (setq gc-cons-percentage 0.6)
+
+
+
+
+ ;https://github.com/purcell/emacs.d/blob/master/init.el
+ ;大师配置
+   (provide 'early-init)
+   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+   ;;; early-init.el ends here
 #+END_SRC
 
 * init.el
 :PROPERTIES:
 :HEADER-ARGS: :tangle init.el
 :END:
-
-=init.el= 是Emacs的主要配置文件。
-
+** 包管理器
 #+begin_src emacs-lisp
-;hel
-  ;; 将lisp目录放到加载路径的前面以加快启动速度
-  (let ((dir (locate-user-emacs-file "lisp")))
-    (add-to-list 'load-path (file-name-as-directory dir)))
 
-  ;; 加载各模块化配置
-  ;; 不要在`*message*'缓冲区显示加载模块化配置的信息
-  (with-temp-message ""
-    ;(require 'init-ui)                    ; UI交互
-    ;(require 'init-edit)                  ; 编辑行为
-    ;(require 'init-org)                   ; org相关设置
-    ;(require 'init-completion)            ; 补全系统
-    ;(require 'packages)            ; 补全系统
+(require 'package)
 
-    )
-  (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
- (setq custom-file (locate-user-emacs-file "custom.el"))
+(setq package-archives '(
+                         ;("melpa" . "https://melpa.org/packages/")
+                         ("melpa" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/melpa/")
+                         ("org" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/org/")
+                         ("gnu" . "https://mirrors.sjtug.sjtu.edu.cn/emacs-elpa/gnu/")
 
+                         ; ("elpa" . "https://elpa.gnu.org/packages/")))
 
-  (set-frame-size (selected-frame) 850 760 'pixelwise)
-  (setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
-
-  ; ┌──────────┐
-  ; │ 默认路径 │
-  ; └──────────┘
+                         ; 163 国内源
+                         ; ("melpa" . "https://melpa.org/packages/")
+                         ; ("melpa-stable" . "https://stable.melpa.org/packages/")
+                         ; ("melpa" . "https://mirrors.163.com/elpa/melpa/")
+                         ; ("melpa-stable" . "https://mirrors.163.com/elpa/stable-melpa/"))))
+))
 
 
 
 
-  (require 'init-system)
-  (require 'init-ui)
+#+end_src
+
+** use-package
+#+begin_src emacs-lisp
+;; 刷新软件索引
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(require 'use-package)
+(setq use-package-always-ensure t) ;确保所有包都被安装
+#+end_src
+
+** 模块加载
+=init.el= 是Emacs的主要配置文件。
+#+begin_src emacs-lisp
+
+;; 将lisp目录放到加载路径的前面以加快启动速度
+(let ((dir (locate-user-emacs-file "lisp")))
+  (add-to-list 'load-path (file-name-as-directory dir)))
+
+
+;; 加载各模块化配置
+;; 不要在`*message*'缓冲区显示加载模块化配置的信息
+(with-temp-message ""
+
+
+  ; (require 'init-system)
   (require 'init-options)
   (require 'init-startup)
   (require 'init-elpa)
   (require 'init-dashboard)
-  (require 'init-packages)
+  (require 'init-packages) ;包含补全
+  (require 'init-ui)
   (require 'init-prog)
   (require 'init-evil)
   (require 'init-function)
@@ -101,7 +135,10 @@
   (require 'init-py)
 
 
+  (require 'setting_new)
+  (require 'packages_new)
 
+  )
   ; ┌───────┐
   ; │ theme │
   ; └───────┘
@@ -112,44 +149,68 @@
 
 
 
-  (when (file-exists-p custom-file)
-    (load-file custom-file))
-
-
-
-
-  ;; 调整垃圾收集阈值
-
-  (let ((normal-gc-cons-threshold (* 20 1024 1024))
-        (init-gc-cons-threshold (* 128 1024 1024)))
-    (setq gc-cons-threshold init-gc-cons-threshold)
-    (add-hook 'emacs-startup-hook
-              (lambda () (setq gc-cons-threshold normal-gc-cons-threshold))))
-  (setq gc-cons-percentage 0.6)
-
-
-
-  ;https://github.com/purcell/emacs.d/blob/master/init.el
-  ;大师配置
-
-
-
 
 
 
 #+end_src
 
+* init-setting.ui
+:PROPERTIES:
+:HEADER-ARGS: :tangle lisp/setting_new.el :mkdirp yes
+:END:
+没有外部package
+#+begin_src emacs-lisp
 
-* init.ui
+
+  (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+  (setq custom-file (locate-user-emacs-file "custom.el"))
+
+
+  (set-frame-size (selected-frame) 850 760 'pixelwise)
+  (setq initial-buffer-choice (lambda () (get-buffer-create "*dashboard*")))
+
+  (line-number-mode)
+  (column-number-mode)
+  (display-time-mode 1)
+  (size-indication-mode 0)
+
+#+end_src
+
+
+** setting.el 文件尾
+#+BEGIN_SRC emacs-lisp
+
+(provide 'setting_new)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#+END_SRC
+
+
+* PACKAGE
+:PROPERTIES:
+:HEADER-ARGS: :tangle lisp/packages_new.el :mkdirp yes
+:END:
+** Org-tempo 补全
+#+begin_src emacs-lisp
+(require 'org-tempo)
+(add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+(add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+(add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
+(add-to-list 'org-structure-template-alist '("py" . "src python"))
+#+end_src
+
+
+** file
+#+begin_src emacs-lisp
+
+#+end_src
+
+** package.el 文件尾
+#+BEGIN_SRC emacs-lisp
+
+(provide 'packages_new)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+#+END_SRC
+
+
 * TODO
 加什么呢
-
-
-
-#+begin_src python
-
-#+end_src
-
-#+begin_src python
-
-#+end_src

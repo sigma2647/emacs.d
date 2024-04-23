@@ -49,10 +49,6 @@
 
 (setq display-time-default-load-average nil)
 
-(line-number-mode)
-(column-number-mode)
-(display-time-mode 1)
-(size-indication-mode 0)
 
 (use-package hide-mode-line
   :commands (hide-mode-line-mode))
@@ -153,8 +149,10 @@
 
 
 
+;
 (require 'org-tempo)
 (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+(add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
 (add-to-list 'org-structure-template-alist '("el" . "src emacs-lisp"))
 (add-to-list 'org-structure-template-alist '("py" . "src python"))
 
